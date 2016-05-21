@@ -20,15 +20,11 @@ from davyhome import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^/$', views.index),
+    url(r'^$', views.index),
     url(r'^catalogue/', views.catalogue),
-
     url(r'^login/', auth_views.login),
     url(r'^logout/', auth_views.logout),
     url(r'^loggedin/', views.loggedin),
     url(r'^logindenied/', views.logindenied),
-
     url(r'^authview/', views.auth_view),
-
-
 ]
