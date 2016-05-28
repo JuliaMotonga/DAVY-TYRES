@@ -68,6 +68,7 @@ class Booking(models.Model):
     booking_time = models.DateTimeField()
     status = models.CharField(choices=BOOKING_STATUS, default=BOOKING_STATUS[0], max_length=20)
     additional_information = models.TextField()
+    registration_number = models.CharField(max_length=10, null=True)
 
     def __unicode__(self):
         return "{}'s booking".format(self.customer.user.username)
