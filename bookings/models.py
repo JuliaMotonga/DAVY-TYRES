@@ -8,6 +8,9 @@ class TimeRange(models.Model):
     start = models.TimeField()
     end = models.TimeField()
 
+    def __unicode__(self):
+        return self.name
+
 
 class AvailabilityCalender(models.Model):
     name = models.CharField(max_length=30)
@@ -18,6 +21,9 @@ class AvailabilityCalender(models.Model):
     friday = models.ForeignKey(TimeRange, related_name='friday_time_range', on_delete=models.CASCADE)
     saturday = models.ForeignKey(TimeRange, related_name='saturday_time_range', on_delete=models.CASCADE)
     sunday = models.ForeignKey(TimeRange, related_name='sunday_time_range', on_delete=models.CASCADE)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Customer(models.Model):
@@ -64,6 +70,6 @@ class Booking(models.Model):
     additional_information = models.TextField()
 
     def __unicode__(self):
-        return self.customer.name
+        return "{}'s booking".format(self.customer.user.username)
 
 
