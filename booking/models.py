@@ -24,7 +24,6 @@ class Booking(models.Model):
 
 class Customer(models.Model):
     user = models.OneToOneField(User)
-    email = models.CharField(max_length=30)
     phone = models.CharField(max_length=20)
     registration_number = models.CharField(max_length=10)
 
