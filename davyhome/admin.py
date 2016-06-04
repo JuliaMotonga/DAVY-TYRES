@@ -10,8 +10,8 @@ class CatalogueAdmin(admin.ModelAdmin):
 
 class BookingAdmin(admin.ModelAdmin):
     search_fields = ['registration_number']
-    list_display = ['customer','service','booking_time','status','registration_number']
-    list_filter = ['status','service']
+    list_display = ['customer', 'service', 'booking_time', 'status', 'registration_number']
+    list_filter = ['status', 'service']
 
 
 class CustomerAdmin(admin.ModelAdmin):

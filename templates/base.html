@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Davy Tyres</title>
 </head>
+<style>
+    div{
+        border: solid 1px #000;
+    }
+</style>
 <body>
     {% include "header.html" %}
-    <div>
+    <div id="content">
         <!-- Loads content page dynamically -->
+        {% block content %}
+        {% endblock %}
     </div>
     {% include "footer.html" %}
 </body>

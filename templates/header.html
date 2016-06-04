@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% include "navigation.html" %}
-</body>
-</html>
+<div id="base-header" style="height: 100px; background: #1021b3">
+    <div id="head-logo" style="background: #48b360; float: left; margin: 20px; height: 70px; width: 10%"> logo </div>
+    <div id="header-right">
+        <div id="head-banner">
+            <div id="head-biz-info" style="background: #b35c56; float: left; margin: 20px; width: 40%"> business info</div>
+            <div id="user-login" style="background: #b36194; float: right; margin: 20px; width: 20%">
+                login links here
+            </div>
+        </div>
+        <div id="navigation-container" style="background: #b30400; float: left; width: 80%">
+            {% include 'navigation.html' %}
+        </div>
+    </div>
+</div>

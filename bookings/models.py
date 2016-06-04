@@ -74,3 +74,4 @@ class Booking(models.Model):
         return "{}'s booking".format(self.customer.user.username)
 
 
+

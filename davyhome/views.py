@@ -5,7 +5,7 @@ from django.shortcuts import render, render_to_response
 
 def index(request):
     """Home page for Davy tyres"""
-    return render_to_response("index.html")
+    return render_to_response("test/index.html")
 
 
 def catalogue(request):

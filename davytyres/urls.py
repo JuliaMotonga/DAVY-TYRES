@@ -16,15 +16,29 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from bookings import views as booking_views
+
 from davyhome import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/$', admin.site.urls),
     url(r'^$', views.index),
-    url(r'^catalogue/', views.catalogue),
-    url(r'^login/', auth_views.login),
-    url(r'^logout/', auth_views.logout),
-    url(r'^loggedin/', views.loggedin),
-    url(r'^logindenied/', views.logindenied),
-    url(r'^authview/', views.auth_view),
+    # url(r'^catalogue/', views.catalogue),
 ]
+
+authentication = [
+    url(r'^logindenied/$', views.logindenied),
+    url(r'^authview/$', views.auth_view),
+    url(r'^loggedin/$', views.loggedin),
+    url(r'^login/$', auth_views.login),
+    url(r'^logout/$', auth_views.logout),
+]
+
+services = [
+
+    url(r'^services/$', booking_views.services),
+    url(r'^services/detail/$', booking_views.service_detail),
+
+]
+
+urlpatterns += authentication + services
