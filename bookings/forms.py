@@ -15,7 +15,7 @@ class BookingForm(ModelForm):
 
     def submit(self):
         if self.is_valid():
-            print 'valid'
+            self.save()
+            return {}
         else:
-            print 'invalid'
-        return self.errors
+            return self.errors

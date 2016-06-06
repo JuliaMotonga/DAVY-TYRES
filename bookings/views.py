@@ -1,14 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from bookings.forms import BookingForm
 
 
 def service_detail(request):
     context = {}
-    errors = None
 
     if request.method == 'POST':
         form = BookingForm(request.POST)
         errors = form.submit()
+        if not errors:
+            return render(request, "services/booking-confirmed.html", form.cleaned_data)
     else:
         form = BookingForm()
 

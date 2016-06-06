@@ -32,7 +32,7 @@ class Customer(models.Model):
     registration_number = models.CharField(max_length=10)
 
     def __unicode__(self):
-        return "{}'s profile".format(self.user)
+        return self.user.username
 
 
 class Service(models.Model):
