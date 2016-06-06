@@ -4,11 +4,13 @@ from bookings.forms import BookingForm
 
 def service_detail(request):
     context = {}
-    if request.method == 'GET':
-        pass
-    elif request.method == 'POST':
-        pass
-    form = BookingForm()
+    errors = None
+
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        errors = form.submit()
+    else:
+        form = BookingForm()
 
     context['booking_form'] = form
 

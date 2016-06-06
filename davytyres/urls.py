@@ -21,7 +21,7 @@ from bookings import views as booking_views
 from davyhome import views
 
 urlpatterns = [
-    url(r'^admin/$', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
     # url(r'^catalogue/', views.catalogue),
 ]

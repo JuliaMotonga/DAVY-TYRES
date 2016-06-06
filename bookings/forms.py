@@ -1,20 +1,21 @@
+from django import forms
 from django.forms import ModelForm
 from bookings.models import Booking
 
 
 class BookingForm(ModelForm):
+
     class Meta:
         model = Booking
-        fields = ['customer', 'service', 'service_employee', 'booking_time', 'status', 'additional_information',
+
+        fields = ['customer', 'service', 'service_employee', 'booking_time', 'additional_information',
                   'registration_number']
 
+        widgets = {'booking_time': forms.DateTimeInput(attrs={'class': 'booking_time'})}
 
-    #         customer = models.ForeignKey(Customer)
-    # service = models.ForeignKey(Service)
-    # service_employee = models.ForeignKey(User)
-    # booking_time = models.DateTimeField()
-    # status = models.CharField(choices=BOOKING_STATUS, default=BOOKING_STATUS[0], max_length=20)
-    # additional_information = models.TextField()
-    # registration_number = models.CharField(max_length=10, null=True)
-
-
+    def submit(self):
+        if self.is_valid():
+            print 'valid'
+        else:
+            print 'invalid'
+        return self.errors
