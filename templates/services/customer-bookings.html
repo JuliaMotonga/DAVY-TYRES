@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for booking in bookings %}
+        <div>
+            <p>Date/Time: {{ booking.booking_time }}<p>
+            <p>Service: {{ booking.service.name }}<p>
+            <p>Service Employee: {{ booking.service_employee.username }}<p>
+            <p>Vehicle Registration: {{ booking.registration_number }}</p>
+            <p>Notes: {{ booking.additional_information }}<p>
+            <hr>
+        </div>
+    {% endfor %}
+{% endblock %}
