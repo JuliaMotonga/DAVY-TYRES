@@ -7,18 +7,13 @@
     <title>Davy Tyres</title>
     {# Jquery & Jquery-UI #}
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
     {# Keno UI (http://demos.telerik.com/kendo-ui/)  #}
     <link href="http://kendo.cdn.telerik.com/2016.2.504/styles/kendo.common.min.css" type="text/css" rel="stylesheet">
     <link href="http://kendo.cdn.telerik.com/2016.2.504/styles/kendo.default.min.css" type="text/css" rel="stylesheet">
     <script src="https://kendo.cdn.telerik.com/2016.2.504/js/kendo.all.min.js"></script>
-
     <script>
         $(function() {
-            $( "#id_booking_time" ).kendoDateTimePicker({
-                value:new Date(),
-                format: "yyyy-MM-dd hh:mm"
-            });
+            $( "#id_booking_time" ).kendoDateTimePicker({ value:new Date(), format: "yyyy-MM-dd hh:mm" });
         });
     </script>
 </head>
@@ -39,5 +34,6 @@
         {% endblock %}
     </div>
     {% include "footer.html" %}
+
 </body>
 </html>
