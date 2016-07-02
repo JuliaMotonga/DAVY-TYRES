@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from bookings import views as booking_views
+from davyhome import views as basic_views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -34,6 +35,7 @@ authentication = [
     url(r'^loggedin/$', views.loggedin),
     url(r'^login/$', auth_views.login),
     url(r'^logout/$', auth_views.logout),
+    url(r'^register/$', basic_views.register),
 ]
 
 services = [

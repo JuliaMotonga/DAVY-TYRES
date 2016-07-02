@@ -1,10 +1,12 @@
 <form action="/services/detail/" method="post">
     {% csrf_token %}
     {% for field in booking_form %}
-        <div id="booking-{{ field.label }}">
-            {{ field.label_tag }}
-            {{ field }}
-        </div>
+        {% if field.label != 'Customer' %}
+            <div id="booking-{{ field.label }}">
+                {{ field.label_tag }}
+                {{ field }}
+            </div>
+        {% endif %}
     {% endfor %}
     <input type="submit" value="Submit">
 {#    {{ booking_form }}#}

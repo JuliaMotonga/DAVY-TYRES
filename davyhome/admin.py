@@ -15,7 +15,24 @@ class BookingAdmin(admin.ModelAdmin):
 
 
 class CustomerAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ('phone', 'registration_number', 'user__first_name', 'user__last_name', 'user__email')
+    list_display = ('first_name', 'last_name', 'email', 'phone', 'activated', 'registration_number')
+
+    @staticmethod
+    def email(obj):
+        return obj.user.email
+
+    @staticmethod
+    def first_name(obj):
+        return obj.user.first_name
+
+    @staticmethod
+    def last_name(obj):
+        return obj.user.last_name
+
+    @staticmethod
+    def activated(obj):
+        return obj.user.is_active
 
 
 class ServiceAdmin(admin.ModelAdmin):

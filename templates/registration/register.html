@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<form action="/register/" method="post">
+    {% csrf_token %}
+    <!-- Stock standard User Registration Form. -->
+        <div id="registration-first_name">
+            <label for="id_first_name">First Name:</label>
+            <input id="id_first_name" name="first_name" type="text">
+        </div>
+        <div id="registration-last_name">
+            <label for="id_last_name">Last Name:</label>
+            <input id="id_last_name" name="last_name" type="text">
+        </div>
+        <div id="registration-{{ user_form.password1.label|lower }}">
+            {{ user_form.password1.label_tag }}
+            {{ user_form.password1 }}
+        </div>
+        <div id="registration-{{ user_form.password2.label|lower }}">
+            {{ user_form.password2.label_tag }}
+            {{ user_form.password2 }}
+        </div>
 
-</body>
-</html>
+    <!-- Hardcoded Email Field. -->
+    <div id="registration-email">
+        <label for="id_email">Email:</label>
+        <input id="id_email" name="email" type="email">
+    </div>
+
+    <!-- Extra fields provided by Customer Model Form. -->
+    <div id="registration-{{ customer_form.phone.label|lower }}">
+        {{ customer_form.phone.label_tag }}
+        {{ customer_form.phone }}
+    </div>
+
+    <div id="registration-{{ customer_form.registration_number.label|lower }}">
+        {{ customer_form.registration_number.label_tag }}
+        {{ customer_form.registration_number }}
+    </div>
+    <input type="submit" value="Submit">
+</form>
