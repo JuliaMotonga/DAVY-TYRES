@@ -1,5 +1,3 @@
-@import url;
-
 body {
     margin: 0;
     padding: 0;
@@ -7,4 +5,8 @@ body {
     font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
     color: #333;
     background: #fff;
+}
+
+#test {
+    background: #2F0
 }

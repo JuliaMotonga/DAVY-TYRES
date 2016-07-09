@@ -7,6 +7,7 @@
     <title>Davy Tyres</title>
     {# Jquery & Jquery-UI #}
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link href="{% static "css/base.css" %}" type="text/css" rel="stylesheet" />
     {% block kendo %}
     {% endblock %}
 </head>
@@ -25,6 +26,9 @@
         <!-- Loads content page dynamically -->
         {% block content %}
         {% endblock %}
+    <div id="test">
+        something
+    </div>
     </div>
     {% include "footer.html" %}
 

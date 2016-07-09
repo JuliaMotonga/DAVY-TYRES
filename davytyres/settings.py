@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from os.path import normpath, join
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -42,21 +44,12 @@ INSTALLED_APPS = [
     'bookings',
 ]
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets', )
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
-
-STATICFILES_DIRS = (
-    # os.path.join(BASE_DIR, 'static'),
-)
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
