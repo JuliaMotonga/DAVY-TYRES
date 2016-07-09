@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.core.exceptions import ValidationError
 from django.forms import ModelForm
 from bookings.models import Booking, Customer
 
@@ -31,3 +33,10 @@ class CustomerForm(ModelForm):
             return {}
         else:
             return self.errors
+
+
+class UserRegistrationForm(UserCreationForm):
+    def clean_password2(self):
+        if len(self.cleaned_data.get('password1')) < 6:
+            raise ValidationError('Password is too short.')
+        return super(UserRegistrationForm, self).clean_password2()

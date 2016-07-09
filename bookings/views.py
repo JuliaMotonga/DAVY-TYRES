@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from bookings.forms import BookingForm
 from bookings.models import Customer, Booking
 
@@ -19,13 +19,15 @@ def service_detail(request):
                 form_data = {item[0]: item[1][0] for item in form_data.iteritems()}
                 form_data['customer'] = customer
                 form = BookingForm(form_data)
+                form.fields['service_employee'].queryset = User.objects.filter(is_staff=True)
                 errors = form.submit()
         if not customer:
-            return HttpResponse('Unauthorized', status=401)
+            return redirect('/register/booking')
         if not errors:
             return render(request, "services/booking-confirmed.html", form.cleaned_data)
     else:
         form = BookingForm()
+        form.fields['service_employee'].queryset = User.objects.filter(is_staff=True)
 
     context['booking_form'] = form
 

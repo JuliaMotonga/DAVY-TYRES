@@ -1,3 +1,8 @@
+{% if redirected_from == 'booking' %}
+    <div>
+        Please register an account or sign in to continue booking.
+    </div>
+{% endif %}
 <form action="/register/" method="post"class="form-horizontal" >
     {% csrf_token %}
     <!-- Stock standard User Registration Form. -->
@@ -16,10 +21,12 @@
         <div id="registration-{{ user_form.password1.label|lower }}">
             {{ user_form.password1.label_tag }}
             {{ user_form.password1 }}
+            {{ user_form.errors }}
         </div>
         <div id="registration-{{ user_form.password2.label|lower }}">
             {{ user_form.password2.label_tag }}
             {{ user_form.password2 }}
+            {{ user_form.errors }}
         </div>
 
     <!-- Hardcoded Email Field. -->

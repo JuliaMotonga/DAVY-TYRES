@@ -13,14 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from bookings import views as booking_views
 from davyhome import views as basic_views
-from django.conf import settings
-from django.conf.urls.static import static
-from django.conf.urls import include, url
+from django.conf.urls import url
 
 
 from davyhome import views
@@ -38,6 +35,7 @@ authentication = [
     url(r'^login/$', auth_views.login),
     url(r'^logout/$', auth_views.logout),
     url(r'^register/$', basic_views.register),
+    url(r'^register/(?P<redirect>\w+)?/?$', basic_views.register),
 ]
 
 services = [
@@ -48,6 +46,3 @@ services = [
 
 
 urlpatterns += authentication + services
-
-# if settings.DEBUG:
-#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

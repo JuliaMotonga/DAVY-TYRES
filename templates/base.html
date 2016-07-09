@@ -1,17 +1,21 @@
 {% load staticfiles %}
+
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel= 'stylesheet' href= "{% static 'bootstrap/css/stylesheet.css' %}" type="text/css"/>
-    <link rel= 'stylesheet' href= "{% static 'bootstrap/css/bootstrap.min.css' %}" type = 'text/css'/>
-    <link href='//fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'/>
+    <title>Header Davy Tyres </title>
     <meta charset="UTF-8">
-    <title>Davy Tyres</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel= 'stylesheet' href= "{% static 'bootstrap/css/bootstrap.min.css' %}" type = 'text/css'/>
+    <link href="{% static "css/base.css" %}" type="text/css" rel="stylesheet" />
+
     {# Jquery & Jquery-UI #}
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <link href="{% static "css/base.css" %}" type="text/css" rel="stylesheet" />
+
     {% block kendo %}
     {% endblock %}
+
 </head>
 
 <style>
@@ -31,17 +35,11 @@
              {% endblock %}
         </section>
         <aside class="col-sm-2">
-davy tyres
+            davy tyres
         </aside>
-
-        <aside class="col-sm-2 col-sm-pull-8">
-
-        </aside>
-
+        <aside class="col-sm-2 col-sm-pull-8"></aside>
     </div>
 </div>
-
     {% include "footer.html" %}
-
 </body>
 </html>

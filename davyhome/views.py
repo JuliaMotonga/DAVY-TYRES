@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response
-from bookings.forms import CustomerForm
+from bookings.forms import CustomerForm, UserRegistrationForm
 
 
 def index(request):
@@ -38,35 +38,38 @@ def auth_view(request):
     # The login is authorised if its matches its value
 
 
-def register(request):
+def register(request, redirect=None):
     context = {}
     if request.method == 'POST':
 
         username = "{}_{}".format(request.POST.get('first_name'), request.POST.get('last_name'))
-        user_form = UserCreationForm({'username': username,
+        user_form = UserRegistrationForm({'username': username,
                                       'password1': request.POST.get('password1'),
                                       'password2': request.POST.get('password2')
                                       })
+        user_form.is_valid()
+        # user_form.clean_password()
         1+1
-        new_user = user_form.save()
-        new_user.email = request.POST.get('email')
-        new_user.first_name = request.POST.get('first_name')
-        new_user.last_name = request.POST.get('last_name')
-        new_user.save()
-        1+1
-        if new_user:
-            customer_form = CustomerForm({'user': new_user.id,
-                                          'phone': request.POST.get('phone'),
-                                          'registration_number': request.POST.get('registration_number')
-                                          })
-            1+1
-            customer = customer_form.save()
-            1+1
+        if user_form.is_valid():
+            new_user = user_form.save()
+            new_user.email = request.POST.get('email')
+            new_user.first_name = request.POST.get('first_name')
+            new_user.last_name = request.POST.get('last_name')
+            new_user.save()
+            if new_user:
+                customer_form = CustomerForm({'user': new_user.id,
+                                              'phone': request.POST.get('phone'),
+                                              'registration_number': request.POST.get('registration_number')
+                                              })
+                customer = customer_form.save()
+        else:
+            customer_form = CustomerForm()
     else:
-        user_form = UserCreationForm()
+        user_form = UserRegistrationForm()
         customer_form = CustomerForm()
     context['user_form'] = user_form
     context['customer_form'] = customer_form
+    context['redirected_from'] = redirect
     return render(request, "registration/registration_page.html", context)
 
 
