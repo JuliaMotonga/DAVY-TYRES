@@ -1,10 +1,22 @@
 from django.contrib import admin
 
-from davyhome.models import Catalogue
+from davyhome.models import Catalogue, Tyre, PriceRange, SaleValue
 from bookings.models import AvailabilityCalender, Customer, Booking, Service, TimeRange
 
 
 class CatalogueAdmin(admin.ModelAdmin):
+    pass
+
+
+class TyreAdmin(admin.ModelAdmin):
+    pass
+
+
+class PriceRangeAdmin(admin.ModelAdmin):
+    pass
+
+
+class SaleValueAdmin(admin.ModelAdmin):
     pass
 
 
@@ -53,3 +65,6 @@ admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(AvailabilityCalender, AvailabilityCalenderAdmin)
 admin.site.register(TimeRange, TimeRangeAdmin)
+admin.site.register(Tyre, TyreAdmin)
+admin.site.register(PriceRange, PriceRangeAdmin)
+admin.site.register(SaleValue, SaleValueAdmin)
