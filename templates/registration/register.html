@@ -1,10 +1,14 @@
-<form action="/register/" method="post">
+<form action="/register/" method="post"class="form-horizontal" >
     {% csrf_token %}
     <!-- Stock standard User Registration Form. -->
+
+       <div class="form-group">
         <div id="registration-first_name">
-            <label for="id_first_name">First Name:</label>
+            <label for="id_first_name" class="col-sm-4 control-label">First Name:</label>
+            <div class="col-sm-8">
             <input id="id_first_name" name="first_name" type="text">
         </div>
+
         <div id="registration-last_name">
             <label for="id_last_name">Last Name:</label>
             <input id="id_last_name" name="last_name" type="text">
@@ -35,4 +39,5 @@
         {{ customer_form.registration_number }}
     </div>
     <input type="submit" value="Submit">
+           </div>
 </form>

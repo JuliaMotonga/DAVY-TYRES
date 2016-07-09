@@ -20,6 +20,8 @@ from bookings import views as booking_views
 from davyhome import views as basic_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import include, url
+
 
 from davyhome import views
 
@@ -43,6 +45,7 @@ services = [
     url(r'^services/detail/$', booking_views.service_detail),
     url(r'^services/bookings$', booking_views.show_active_bookings),
 ]
+
 
 urlpatterns += authentication + services
 
