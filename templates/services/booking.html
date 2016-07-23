@@ -1,18 +1,19 @@
+<div class="booking-form">
+    <h1>Booking Form</h1>
 <form action="/services/detail/" method="post" class="form-horizontal">
-
-
     {% csrf_token %}
     {% for field in booking_form %}
         {% if field.label != 'Customer' %}
             <div id="booking-{{ field.label }}" class="form-group">
-               <label class="col-sm-3 control-label" > {{ field.label_tag }}</label>
-              <div class="col-sm-8">{{ field }}</div>
+               <label class="col-xs-4 col-sm-4 col-md-4 control-label"  id = "label-form"> {{ field.label_tag }}</label>
+              <div id = "booking-fields" class="booking-fields col-xs-6 col-sm-6 col-md-5">{{ field }}</div>
             </div>
         {% endif %}
     {% endfor %}
     <input type="submit" value="Submit">
 {#    {{ booking_form }}#}
 </form>
+</div>
 
 
 

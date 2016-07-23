@@ -1,14 +1,36 @@
-<div class="conatiner-fluid" style= "height:50px;">
-    <div class="row">
-        <aside class="col-sm-2"></aside>
-        <section class="col-sm-8">
-            Navigation Menu/Brand/Search Bar
-        </section>
-        <aside class="col-sm-2">
-            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <link href=""/> Log In
-        </aside>
+{%load staticfiles%}
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Booking</a></li>
+        <li><a href="#">Tyres</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
+     <div class="input-group input-group navbar-right">
+     <span class="input-group-addon" id="sizing-addon3">
+      <a href="#" class="navIcon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+      </span>
+    <input type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon3" id="navInput">
+     </div>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
 
 
 
