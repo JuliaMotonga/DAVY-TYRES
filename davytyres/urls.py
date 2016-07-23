@@ -23,9 +23,10 @@ from django.conf.urls import url
 from davyhome import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
-    # url(r'^catalogue/', views.catalogue),
+    url(r'^admin/', admin.site.urls),
+    url(r'^catalogue/', views.catalogue),
+    url(r'unimplemented/', views.unimplemented)
 ]
 
 authentication = [
@@ -43,6 +44,5 @@ services = [
     url(r'^services/detail/$', booking_views.service_detail),
     url(r'^services/bookings$', booking_views.show_active_bookings),
 ]
-
 
 urlpatterns += authentication + services

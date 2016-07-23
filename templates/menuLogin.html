@@ -3,8 +3,18 @@
 <div class = "container-fluid">
  <ul class="menuLogin">
      <img src="{%static 'images/DavySSLogo210x200-1.png'%}" alt="Logo" class="logoD">
-     <a href="#" class="menuLogHome"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-     <a href="#" class="menuLog"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <div class="members-name">Admin</div></a>
+    {% if user.is_authenticated %}
+        <a href="#" class="menuLog">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <div class="members-name">{{ request.user.first_name }}</div>
+        </a>
+    {% else %}
+        <a href="/login" class="menuLog">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <div class="members-name">Login</div>
+        </a>
+    {% endif %}
+
      <a href="#" class="menulogHome"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></a>
      </ul>
     </div>

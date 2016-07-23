@@ -29,10 +29,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'bookings.BaseUser'
 
 # Application definition
 
 INSTALLED_APPS = [
+    'davyhome',
+    'bookings',
     'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,8 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'davyhome',
-    'bookings',
+    'simple_email_confirmation',
+
 ]
 
 

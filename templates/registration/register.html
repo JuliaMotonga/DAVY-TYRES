@@ -3,48 +3,12 @@
         Please register an account or sign in to continue booking.
     </div>
 {% endif %}
-<form action="/register/" method="post"class="form-horizontal" >
-    {% csrf_token %}
-    <!-- Stock standard User Registration Form. -->
-
-       <div class="form-group">
-        <div id="registration-first_name">
-            <label for="id_first_name" class="col-sm-4 control-label">First Name:</label>
-            <div class="col-sm-8">
-            <input id="id_first_name" name="first_name" type="text">
+<form action="/register/" method="post"class="form-horizontal" >{% csrf_token %}
+    {% for field in user_form %}
+        <div id="register-{{ field.label }}" class="form-group">
+            <label class="col-sm-3 control-label" > {{ field.label_tag }}</label>
+            <div class="col-sm-8">{{ field }}</div>
         </div>
-
-        <div id="registration-last_name">
-            <label for="id_last_name">Last Name:</label>
-            <input id="id_last_name" name="last_name" type="text">
-        </div>
-        <div id="registration-{{ user_form.password1.label|lower }}">
-            {{ user_form.password1.label_tag }}
-            {{ user_form.password1 }}
-            {{ user_form.errors }}
-        </div>
-        <div id="registration-{{ user_form.password2.label|lower }}">
-            {{ user_form.password2.label_tag }}
-            {{ user_form.password2 }}
-            {{ user_form.errors }}
-        </div>
-
-    <!-- Hardcoded Email Field. -->
-    <div id="registration-email">
-        <label for="id_email">Email:</label>
-        <input id="id_email" name="email" type="email">
-    </div>
-
-    <!-- Extra fields provided by Customer Model Form. -->
-    <div id="registration-{{ customer_form.phone.label|lower }}">
-        {{ customer_form.phone.label_tag }}
-        {{ customer_form.phone }}
-    </div>
-
-    <div id="registration-{{ customer_form.registration_number.label|lower }}">
-        {{ customer_form.registration_number.label_tag }}
-        {{ customer_form.registration_number }}
-    </div>
+    {% endfor %}
     <input type="submit" value="Submit">
-           </div>
 </form>

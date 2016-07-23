@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if failed_login %}
+        Login failed, try again...
+    {% endif %}
     <form action="/authview/" method="post">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="login" />
     </form>
-</body>
-</html>
+{% endblock %}
+

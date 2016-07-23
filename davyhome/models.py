@@ -1,5 +1,4 @@
 from __future__ import unicode_literals
-
 from django.db import models
 
 
@@ -38,7 +37,7 @@ class Tyre(models.Model):
 
 class Catalogue(models.Model):
     catalogue_name = models.CharField(max_length=50)
-    tyres = models.ManyToManyField(Tyre, null=True, blank=True, default=None)
+    tyres = models.ManyToManyField(Tyre, blank=True, default=None)
 
     def __unicode__(self):
         return self.catalogue_name
