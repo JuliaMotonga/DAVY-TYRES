@@ -45,15 +45,17 @@ def service_detail(request):
 def show_active_bookings(request, cancel=None):
     context = {}
     user = BaseUser.objects.filter(email=request.user.email)[0]
-    booking = Booking.objects.filter(id=cancel)[0]
-    if cancel and booking.customer.id == request.user.id and booking.status[3] == 'C' and booking.status[3] == 'F':
-        booking.status = Booking.BOOKING_STATUS[3]
-        booking.save()
-        email_body = "User {} has canceled booking #{}".format(user.email, booking.id)
-        send_mail('Booking confirmation for {}.'.format(user.first_name), email_body, 'no_reply@davytyres.co.nz',
-                  [settings.EMAIL_ADMIN_USER])
-    else:
-        return HttpResponseForbidden()
+
+    if cancel:
+        booking = Booking.objects.filter(id=cancel)[0]
+        if booking.customer.id == request.user.id and booking.status[3] == 'C' and booking.status[3] == 'F':
+            booking.status = Booking.BOOKING_STATUS[3]
+            booking.save()
+            email_body = "User {} has canceled booking #{}".format(user.email, booking.id)
+            send_mail('Booking confirmation for {}.'.format(user.first_name), email_body, 'no_reply@davytyres.co.nz',
+                      [settings.EMAIL_ADMIN_USER])
+        else:
+            return HttpResponseForbidden()
         # context['canceled'] = 'booking #{} was cancelled.'.format(booking.id)
     bookings = Booking.objects.filter(customer_id=user.id)
 
