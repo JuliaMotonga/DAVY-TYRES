@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^admin/', admin.site.urls),
     url(r'^catalogue/', views.catalogue),
+    url(r'^activate/(?P<activation>\w+)/(?P<email>\w+)/$', views.activate),
     url(r'unimplemented/', views.unimplemented)
 ]
 

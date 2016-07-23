@@ -47,7 +47,18 @@ INSTALLED_APPS = [
 
 ]
 
-
+# if DEBUG:
+#     EMAIL_HOST = 'localhost'
+#     EMAIL_PORT = '1025'
+# else:
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+SERVER_EMAIL = 'davytyrestest@gmail.com'
+EMAIL_HOST_USER = 'davytyrestest@gmail.com'
+EMAIL_HOST_PASSWORD = 'admin123!'
+HOST_DOMAIN = 'localhost:8000'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets', )

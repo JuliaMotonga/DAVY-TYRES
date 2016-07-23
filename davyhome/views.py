@@ -1,7 +1,12 @@
+from binascii import hexlify, unhexlify
 from django.contrib import auth
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response
 from bookings.forms import RegistrationForm
+from django.core.mail import send_mail
+
+from bookings.models import BaseUser
+from davytyres import settings
 
 
 def index(request):
@@ -48,10 +53,28 @@ def register(request, redirect=None):
     if request.method == 'POST':
         valid = user_form.is_valid()
         if valid:
-            user_form.save()
+            user = user_form.save()
+            email_body = " Hi {}, please activate your account " \
+                         "by visiting this link http://{}/activate/{}/{}.".format(user.first_name,
+                                                                                  settings.HOST_DOMAIN,
+                                                                                  hexlify(user.confirmation_key),
+                                                                                  hexlify(user.email))
+            send_mail('user registration for {} at davytyres.co.nz'.format(user.first_name),
+                      email_body, 'no_reply@davytyres.co.nz', [user.email])
             return render(request, 'registration/register-success.html', context)
 
     return render(request, 'registration/registration_page.html', context)
+
+
+def activate(request, *args, **kwargs):
+    try:
+        activation_key = unhexlify(kwargs['activation'])
+        email = unhexlify(kwargs['email'])
+        user = BaseUser.objects.filter(email=email)[0]
+        user.confirm_email(activation_key)
+    except Exception as e:
+        return render(request, 'unimplemented.html')
+    return render(request, 'registration/activated.html')
 
 
 def login(request):

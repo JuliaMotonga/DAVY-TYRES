@@ -39,5 +39,5 @@ class RegistrationForm(UserCreationForm):
 
         if commit:
             user.save()
-        return self.is_valid()
+        return user
 
