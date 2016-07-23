@@ -43,7 +43,8 @@ authentication = [
 services = [
     url(r'^services/$', booking_views.services),
     url(r'^services/detail/$', booking_views.service_detail),
-    url(r'^services/bookings$', booking_views.show_active_bookings),
+    url(r'^services/bookings/$', booking_views.show_active_bookings),
+    url(r'^services/bookings/(?P<cancel>\w+)?/?$', booking_views.show_active_bookings),
 ]
 
 urlpatterns += authentication + services

@@ -4,7 +4,7 @@
  <ul class="menuLogin">
      <img src="{%static 'images/DavySSLogo210x200-1.png'%}" alt="Logo" class="logoD">
     {% if user.is_authenticated %}
-        <a href="#" class="menuLog">
+        <a href="/services/bookings/" class="menuLog">
             <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
             <div class="members-name">{{ request.user.first_name }}</div>
         </a>
