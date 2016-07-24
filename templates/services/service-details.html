@@ -1,21 +1,5 @@
 {% extends 'base.html' %}
 
-{% block kendo %}
-    {# Kendo UI (http://demos.telerik.com/kendo-ui/) under Apache2 Licence  #}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/kendo-ui-core/2014.1.416/styles/kendo.common.min.css" type="text/css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/kendo-ui-core/2014.1.416/styles/kendo.default.min.css" type="text/css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/kendo-ui-core/2014.1.416/js/kendo.ui.core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/kendo-ui-core/2014.1.416/js/kendo.ui.core.min.js.map"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/kendo-ui-core/2014.1.416/js/kendo.datetimepicker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/kendo-ui-core/2014.1.416/js/kendo.datetimepicker.min.js.map"></script>
-    <script>
-        $(function() {
-            $( "#id_booking_time" ).kendoDateTimePicker({ value:new Date(), format: "yyyy-MM-dd hh:mm" });
-        });
-    </script>
-
-{% endblock %}
-
 {% block content %}
     {% include "services/booking.html" %}
 

@@ -1,4 +1,3 @@
-from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
 from bookings.models import Booking, BaseUser
@@ -10,8 +9,6 @@ class BookingForm(ModelForm):
 
         fields = ['customer', 'service', 'service_employee', 'booking_time', 'additional_information',
                   'registration_number']
-
-        widgets = {'booking_time': forms.DateTimeInput()}
 
     def submit(self):
         if self.is_valid():

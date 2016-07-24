@@ -1,18 +1,31 @@
+{% load staticfiles %}
+
+
 <div class="booking-form">
     <h1>Booking Form</h1>
-<form action="/services/detail/" method="post" class="form-horizontal">
-    {% csrf_token %}
-    {% for field in booking_form %}
-        {% if field.label != 'Customer' %}
-            <div id="booking-{{ field.label }}" class="form-group">
-               <label class="col-xs-4 col-sm-4 col-md-4 control-label"  id = "label-form"> {{ field.label_tag }}</label>
-              <div id = "booking-fields" class="booking-fields col-xs-6 col-sm-6 col-md-5">{{ field }}</div>
-            </div>
-        {% endif %}
-    {% endfor %}
-    <input type="submit" value="Submit">
-{#    {{ booking_form }}#}
-</form>
+    {% block jqueryui %}
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+        <script src="{% static 'js/jquery-ui-timepicker-addon.js'%}"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="{% static 'css/jquery-ui-timepicker-addon.css'%}">
+    {% endblock %}
+    <script type="text/javascript">
+        $(function() {
+            $('#id_booking_time').datetimepicker();
+        });
+    </script>
+    <form action="/services/detail/" method="post" class="form-horizontal">
+        {% csrf_token %}
+        {% for field in booking_form %}
+            {% if field.label != 'Customer' %}
+                <div id="booking-{{ field.label }}" class="form-group">
+                   <label class="col-xs-4 col-sm-4 col-md-4 control-label"  id = "label-form"> {{ field.label_tag }}</label>
+                  <div id = "booking-fields" class="booking-fields col-xs-6 col-sm-6 col-md-5">{{ field }}</div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
 </div>
 
 

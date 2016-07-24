@@ -1,41 +1,34 @@
 {% load staticfiles %}
 
 <html lang="en">
-<head>
-    <title>Header Davy Tyres </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel= 'stylesheet' href= "{% static 'bootstrap/css/bootstrap.min.css' %}" type = 'text/css'/>
-    <link href="{% static 'css/base.css' %}" type="text/css" rel="stylesheet" />
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <head>
+        <title>Header Davy Tyres </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel= 'stylesheet' href= "{% static 'bootstrap/css/bootstrap.min.css' %}" type='text/css'/>
+        <link href="{% static 'css/base.css' %}" type="text/css" rel="stylesheet" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <script src="{% static 'admin/js/jquery-1.9.1.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+        {% block jqueryui %}{% endblock %}
+    </head>
 
+    <body>
+        {% include "header.html" %}
+        <div class="conatiner-fluid" >
+            <div class= "row">
+                <aside class= "hidden-xs hidden-sm col-md-1" ></aside>
+                <section class = "col-xs-12 col-sm-12 col-md-10 " align="center">
+                    {% block content %}{% endblock %}
+                </section>
+                <aside class= "hidden-xs hidden-sm col-md-1"></aside>
+             </div>
+        </div>
+        {% include "footer.html" %}
 
-    {% block kendo %}
-    {% endblock %}
-</head>
-
-<body>
-    {% include "header.html" %}
-   <div class="conatiner-fluid" >
-    <div class= "row">
-        <aside class= "hidden-xs hidden-sm col-md-1" >
-            </aside>
-
-          <section class = "col-xs-12 col-sm-12 col-md-10 " align="center">
-            {% block content %}
-             {% endblock %}
-    </section>
-        <aside class= "hidden-xs hidden-sm col-md-1">
-        </aside>
-         </div>
-       </div>
-    {% include "footer.html" %}
-
-   {# Jquery & Jquery-UI #}
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="{% static 'admin/js/jquery-1.9.1.min.js' %}"></script>
-    <script src = "{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
-    <script src = "{% static 'bootstrap/js/classie.js'%}"></script>
-    <script src = "{% static 'bootstrap/js/cbpAnimatedHeader.js'%}"></script>
-
-</body>
+        {# Jquery & Jquery-UI #}
+{#        <script src="{% static 'admin/js/jquery-1.9.1.min.js' %}"></script>#}
+{#        <script src = "{% static 'bootstrap/js/bootstrap.min.js'%}"></script>#}
+{#        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">#}
+{#        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>#}
+    </body>
 </html>
