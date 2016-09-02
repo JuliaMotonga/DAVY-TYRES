@@ -58,6 +58,7 @@ SERVER_EMAIL = 'davytyrestest@gmail.com'
 EMAIL_HOST_USER = 'davytyrestest@gmail.com'
 EMAIL_ADMIN_USER = 'davytyrestest@gmail.com'
 EMAIL_HOST_PASSWORD = 'admin123!'
+HEROKU_PASSWORD = 'admin123!'
 HOST_DOMAIN = 'localhost:8000'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
