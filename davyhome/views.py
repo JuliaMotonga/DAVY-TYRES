@@ -14,6 +14,10 @@ def index(request):
     return render_to_response("test/index.html")
 
 
+def test_view(request):
+    return render(request, "test/testview.html", {})
+
+
 def catalogue(request):
     context = {
                 'tempvar1': "Hello World",

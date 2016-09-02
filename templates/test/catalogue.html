@@ -1,5 +1,49 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    CATALOGUE CONTENT
+{%load staticfiles%}
+     <h1>Davy Tyres Services</h1>
+    <hr noshade size="5px">
+<div class="wrap">
+
+
+  <!-- Define all of the tiles: -->
+  <div class="box">
+    <div class="boxInner">
+      <img src= "{%static 'images/tyres/u75.JPG'%}">
+        <div class="titleBox">Some Car</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="boxInner">
+     <img src= "{%static 'images/tyres/u77.JPG'%}">
+      <div class="titleBox">Some Car</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="boxInner">
+      <img src= "{%static 'images/tyres/u79.JPG'%}">
+      <div class="titleBox">Some Car</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="boxInner">
+      <img src= "{%static 'images/tyres/u81.JPG'%}">
+      <div class="titleBox">Some Car</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="boxInner">
+      <img src= "{%static 'images/tyres/u85.JPG'%}">
+      <div class="titleBox">Some Car</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="boxInner">
+     <img src= "{%static 'images/tyres/u83.JPG'%}">
+      <div class="titleBox">Some Car</div>
+    </div>
+  </div>
+</div>
+<!-- /#wrap -->
 {% endblock %}
