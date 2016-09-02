@@ -4,10 +4,13 @@
     {% if failed_login %}
         Login failed, try again...
     {% endif %}
-    <form action="/authview/" method="post">
+<hr noshade size="5px">
+
+    <form action="/authview/" method="post" class="login_form">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="login" />
+        <input type="submit" value="login" class="blog"/>
     </form>
+
 {% endblock %}
 

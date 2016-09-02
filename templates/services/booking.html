@@ -3,6 +3,7 @@
 
 <div class="booking-form">
     <h1>Booking Form</h1>
+    <hr noshade size="5px">
     {% block jqueryui %}
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
         <script src="{% static 'js/jquery-ui-timepicker-addon.js'%}"></script>
@@ -14,7 +15,7 @@
             $('#id_booking_time').datetimepicker();
         });
     </script>
-    <form action="/services/detail/" method="post" class="form-horizontal">
+    <form action="/services/detail/" method="post" class="form-horizontal" id="booking_form">
         {% csrf_token %}
         {% for field in booking_form %}
             {% if field.label != 'Customer' %}
@@ -24,7 +25,7 @@
                 </div>
             {% endif %}
         {% endfor %}
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" class="booksub"/>
     </form>
 </div>
 
