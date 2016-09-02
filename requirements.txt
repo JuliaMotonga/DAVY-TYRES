@@ -2,3 +2,4 @@ Django==1.8.13
 django-admin-bootstrapped==2.5.7
 wheel==0.24.0
 django-simple-email-confirmation==0.12
+psycopg2

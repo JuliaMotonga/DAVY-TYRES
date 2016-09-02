@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'bookings.BaseUser'
 
+MYSQL = False
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -109,6 +111,19 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+if not MYSQL:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'dbjgor8fc7el9m',
+            'USER': 'tetureiqzazmyj',
+            'PASSWORD': 'NUtHiDlicY_fKynjxjqHY-XotP',
+            'HOST': 'ec2-54-243-126-40.compute-1.amazonaws.com',
+            'PORT': '5432',
+        }
+    }
+
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 SESSION_COOKIE_HTTPONLY = True
