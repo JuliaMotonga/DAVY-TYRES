@@ -1,0 +1,44 @@
+
+/**login Form**/
+
+.login_form {
+    margin-top:30px;
+    border: 3px solid #f1f1f1;
+    padding:40px;
+}
+
+.login_form label{
+display:none;
+}
+
+
+.login_form input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px ;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.blog {
+    background-color:#000033 ;
+    color: white;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.container {
+    padding: 16px;
+}
+
+ .login_form li {
+display:inline-block;
+color: #000033;
+margin: 8px 0;
+padding: 12px 10px;
+}

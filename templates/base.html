@@ -4,45 +4,51 @@
 <html lang="en">
     <head>
         <title>Header Davy Tyres </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel= 'stylesheet' href= "{% static 'bootstrap/css/bootstrap.min.css' %}" type='text/css'/>
         <link href="{% static 'css/base.css' %}" type="text/css" rel="stylesheet" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'fonts-font-awesome/css/font-awesome.min.css' %}" type='text/css'/>
+        <link rel="stylesheet" href="{% static 'fonts-font-awesome/css/font-awesome.min.css' %}" >
+        <link rel="stylesheet" href="{% static 'css/max480px.css' %}" media="screen and (max-device-width:480px)" >
+        <link rel="stylesheet" href="{% static 'css/max1024px.css' %}" media="screen and (min-width: 481px) and (max-device-width:1024px)">
+        <link rel="stylesheet" href="{% static 'css/min1224px.css' %}" media="screen and (min-width: 1025px) and (max-device-width:1224px)">
         <script src="{% static 'admin/js/jquery-1.9.1.min.js' %}"></script>
         <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="{% static 'js/flickity.pkgd.min.js'%}">"></script>
+        <script src="{% static 'js/flickity.js'%}">"></script>
+        <link rel= 'stylesheet' href= "{% static 'flickity-docs/flickity.css' %}" type='text/css'/>
         {% block jqueryui %}{% endblock %}
     </head>
 
     <body>
             <div class= "row">
-                <aside class= "hidden-xs hidden-sm col-md-1" ></aside>
-                <section class = "col-xs-12 col-sm-12 col-md-10 " align="center">
+                <aside class= " header hidden-xs hidden-sm col-md-1" ></aside>
+                <section class = "header col-xs-12 col-sm-12 col-md-10 " align="center">
                    {% include "header.html" %}
                 </section>
-                <aside class= "hidden-xs hidden-sm col-md-1"></aside>
+                <aside class= "header hidden-xs hidden-sm col-md-1"></aside>
         </div>
 
         <div class="conatiner-fluid" >
             <div class= "row">
                 <aside class= "hidden-xs hidden-sm col-md-1" ></aside>
-                <section class = "col-xs-12 col-sm-12 col-md-10 " align="center">
+                <section class = "col-xs-12 col-sm-12 col-md-10 col-lg-10 " align="center">
                     {% block content %}{% endblock %}
+                    {%include "affiliates.html"%}
                 </section>
-                <aside class= "hidden-xs hidden-sm col-md-1"></aside>
+                <aside class= "hidden-xs hidden-sm col-md-1 col-lg-2"></aside>
              </div>
         </div>
 
         {# Jquery & Jquery-UI #}
   <div class= "row">
-                <aside class= "hidden-xs hidden-sm col-md-1" ></aside>
-                <section class = "col-xs-12 col-sm-12 col-md-10 " align="center">
+                <aside class= "footer hidden-xs hidden-sm" ></aside>
+                <section class = "footer col-xs-12 col-sm-12 col-md-12 " align="center">
                    {% include "footer.html" %}
                 </section>
-                <aside class= "hidden-xs hidden-sm col-md-1"></aside>
+                <aside class= "footer hidden-xs hidden-sm"></aside>
         </div>
 {#        <script src="{% static 'admin/js/jquery-1.9.1.min.js' %}"></script>#}
 {#        <script src = "{% static 'bootstrap/js/bootstrap.min.js'%}"></script>#}

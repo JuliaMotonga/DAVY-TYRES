@@ -6,11 +6,24 @@
     {% endif %}
 <hr noshade size="5px">
 
-    <form action="/authview/" method="post" class="login_form">
+    <form action="/authview/" method="post" class="login_form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="login" class="blog"/>
+        <input type="submit" value="Login" class="blog"/>
+      <div text-align="center">
+        <ul>
+        <li>New Customer! <a href="/register/">Register</a></li>
+        <li><a href="">Forgot my password!</a></li>
+            </ul>
+          </div>
     </form>
+
+<script>
+$("#id_username").attr('placeholder', 'Email Address' );
+$("#id_password").attr('placeholder', 'Password' );
+
+</script>
+
 
 {% endblock %}
 
