@@ -2,15 +2,39 @@
 
 <div class="tyre-calculator">
    <div class="calculator"> <img src= "{%static 'images/tyres/u138.jpg'%}"></div>
-   <form class="col-md-4" text-align="center">
- Width:
-  <input type="text">
- Profile:
-  <input type="text">
-     Size:
-  <input type="text">
-  Speed:
-  <input type="text">
+   <form class="col-md-4 col-sm-5 col-xs-5">
+  <input type="text" placeholder="Width" id="W">
+  <input type="text" placeholder="Profile" id="P">
+  <input type="text" placeholder="Size" id="Size">
+  <input type="text" placeholder="Speed" id="Speed">
+       <br>
+     <select name="Vehicle Type">
+    <option value="Vehicle Type">Family Car</option>
+    <option value="Vehicle Type">Small car</option>
+    <option value="Vehicle Type">4WD</option>
+    <option value="Vehicle Type">Heavy Machinery</option>
+      <option value="Vehicle Type">Sports Car</option>
+      <option value="Vehicle Type">Commercial</option>
+  </select><br>
+    <select name="brand">
+    <option value="brand">Michellin</option>
+    <option value="brand">Honda</option>
+    <option value="brand">Blueperies</option>
+    <option value="brand">Some Brand</option>
+    <option value="brand">Some Brand</option>
+  </select><br>
+    <select name="Categories">
+    <option value="Categories">Fuel Economy</option>
+    <option value="Categories">Big Tyres</option>
+    <option value="Categories">Some Tyres</option>
+    <option value="Categories">Small Tyres</option>
+        <option value="Categories">Large Tyres</option>
+   </select><br>
+    <select name="Price">
+    <option value="Price">Low to High</option>
+    <option value="Price">High to Low</option>
+    <option value="Price">Second Hand</option>
+  </select><br>
        <input type="submit" value="SEARCH">
 </form>
   </div>

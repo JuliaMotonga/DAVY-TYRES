@@ -17,6 +17,8 @@ def index(request):
 def test_view(request):
     return render(request, "test/testview.html", {})
 
+def about_us(request):
+    return render(request, "davytyres/about-us.html", {})
 
 def catalogue(request):
     context = {
@@ -35,6 +37,9 @@ def catalogue(request):
 
 def unimplemented(request):
     return render(request, "unimplemented.html")
+
+def about_us(request):
+    return render(request, "davytyres/about-us.html")
 
 
 def auth_view(request):

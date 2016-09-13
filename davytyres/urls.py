@@ -28,8 +28,12 @@ urlpatterns = [
     url(r'^sometest/', views.test_view, name='sometest'),
     url(r'^catalogue/', views.catalogue),
     url(r'^activate/(?P<activation>\w+)/(?P<email>\w+)/$', views.activate),
-    url(r'unimplemented/', views.unimplemented)
+    url(r'unimplemented/', views.unimplemented),
+    url(r'about-us', views.about_us)
+
 ]
+
+
 
 authentication = [
     url(r'^logindenied/$', views.logindenied),
@@ -49,3 +53,4 @@ services = [
 ]
 
 urlpatterns += authentication + services
+

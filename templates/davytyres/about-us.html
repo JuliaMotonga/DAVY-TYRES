@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{%load staticfiles%}
+{% block content %}
+<h3 class =""style="text-align:left;">About Us</h3>
+<hr>
+<div class="about-us">
+  <div style="width:25%;" class=" hidden-xs hidden-sm"><img src= "{%static 'images/davyPhotos/IMG_1139.JPG'%}">
+     <img src= "{%static 'images/services/WheelAlignment.jpg'%}">
+  </div>
+<div>
+    <p style="text-align:left;font-weight:400px;"><b>Family Business</b></p>
+   <p style="text-align:left;" id="pabout-us">
+   Davy Tyres is a family owned and operated tyre shop in the bustling area of Central Park Drive in Henderson, Waitakere City.
+   Gene Davy has been operating the business since 1997, which prides itself not only on providing leading brand tyre products,
+   but also having up to date equipment, knowledge, and technical staff to provide a full top-notch tyre service.
+The shop is equipped with up to date wheel alignment equipment and technicians with extensive knowledge and experience in this area.
+   </p>
+     <p style="text-align:left;"><b>Our Tyres</b></p>
+   <p style="text-align:left;">
+   Not only does the shop cater for cars but bikes, four-wheel drives, and trucks no matter the size.
+For customer convenience a waiting room facility is provided with hot or cold drinks available while their vehicles are being serviced.
+   </p>
+     <p style="text-align:left;"><b>Our Services</b></p>
+   <p style="text-align:left;">
+   There is also a drop off and pick up service available for customers who work locally, so their vehicle is taken care of while they take care of business.
+   </p>
+     <p style="text-align:left;"><b>24h/7 Hour Rescue Services</b></p>
+   <p style="text-align:left;">
+   Commercial fleet and heavy machinery operators are also catered for. Davy Tyres have four fleet trucks available with heavy truck and machinery specialist technicians, to service large commercial fleets anywhere on demand.
+Gene Davy has raced in the Muscle Car Series at Pukekohe over a number of years and the team at Davy Tyres have become experts at setting up classic cars for the road or track.
+Updates
+  </p>
+     <p style="text-align:left;"><b>Nitro Fill</b></p>
+   <p style="text-align:left;">
+Davy Tyres now have NitroFill (see services), a nitrogen tyre inflation service. Better fuel economy, longer tyre life, improved handling and safety are just a few of NitroFill’s benefits.
+Don’t forget to check out our latest specials.
+   </p>
+</div>
+</div>
 
-</body>
-</html>
+
+
+{% endblock %}

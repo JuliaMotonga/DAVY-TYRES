@@ -223,14 +223,17 @@ font-size:17px;
     }
 
 :focus {
-     background-color: #ccc;
+     background-color: #F7E79C;
+     opacity:0.9;
     }
 
 
-input:invalid;
+input:invalid{
+border: 0.05px solid red ;
+}
 
 #booking_form textarea{
-height:100px;
+height:80px;
 }
    .booksub{
     background-color:#000033 ;
@@ -266,7 +269,7 @@ text-align:center;
 /*carousel*/
 .gallery-cell {
   width: 100%;
-  height: 320px;
+  height: 360px;
   border-radius:3px;
 }
 .carouselHome{
@@ -275,7 +278,7 @@ margin-top:20px;
 /* full width cells by default */
 .gallery-cell img{
   width: 100%;
-  height:320px;
+  height:360px;
    border-radius:3px;
   }
 
@@ -305,12 +308,12 @@ border:none;
 
 .thumbnailC {
   display: block;
-  padding: 10px;
+  padding: 3px;
   margin-bottom: 20px;
   line-height: 1.42857143;
   background-color:none;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   -webkit-transition: border .2s ease-in-out;
        -o-transition: border .2s ease-in-out;
           transition: border .2s ease-in-out;
@@ -328,7 +331,7 @@ a.thumbnailC.active {
 
 
 .thumbnailC .caption {
-  padding: 9px;
+  padding: 3px;
   color: #333;
 }
 
@@ -368,16 +371,18 @@ width:100%;
 }
 
 .tyre-calculator{
-margin-top:-332px;
+margin-top:-372px;
 color:#000033;
 padding-top:10px;
 }
+
 
 .tyre-calculator form input {
 color:#000033;
 border: 2px solid #000033;
 border-radius:3px;
 width:325%;
+margin-top:4px;
 }
 
 .tyre-calculator form{
@@ -390,8 +395,30 @@ width:325%;
 color:yellow;
 background: #000033;
 text-align:center;
-
 }
+.tyre-calculator form select{
+margin-top:4px;
+width:325%;
+background:white;
+border: 2px solid #000033;
+}
+
+::-webkit-input-placeholder {
+   color: #000033;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #000033;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #000033;
+}
+
+:-ms-input-placeholder {
+   color: #000033;
+}
+
 /*running text*/
 marquee{
 background-color: #000033;
@@ -472,6 +499,7 @@ background-color: #e6e6ff;
 width: 100%;
 margin: 0px;
 margin-top:20px;
+height:400px;
 }
 
 .site-map iframe{
@@ -486,3 +514,39 @@ float:left;
 text-align:left;
 padding:10px;
 }
+
+/*detailed search*/
+.detailed-search #display-search{
+height:200px;
+float:right;
+margin-top:10px;
+width:75%;
+}
+
+/*about us page*/
+.about-us{
+ display:table;
+ width:100%;
+ padding-bottom:30px;
+}
+
+.about-us div{
+display:table-cell;
+margin:0px;
+width:50%;
+padding:6px;
+}
+
+.about-us div img{
+width:100%;
+height:265px;
+float:right;
+padding:2px;
+}
+
+.about-us div p{
+float:left;
+color:#000033;
+
+}
+
