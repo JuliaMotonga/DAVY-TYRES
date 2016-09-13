@@ -14,6 +14,12 @@ def index(request):
     return render_to_response("test/index.html")
 
 
+def test_view(request):
+    return render(request, "test/testview.html", {})
+
+def about_us(request):
+    return render(request, "davytyres/about-us.html", {})
+
 def catalogue(request):
     context = {
                 'tempvar1': "Hello World",
@@ -31,6 +37,9 @@ def catalogue(request):
 
 def unimplemented(request):
     return render(request, "unimplemented.html")
+
+def about_us(request):
+    return render(request, "davytyres/about-us.html")
 
 
 def auth_view(request):
@@ -62,6 +71,8 @@ def register(request, redirect=None):
             send_mail('user registration for {} at davytyres.co.nz'.format(user.first_name),
                       email_body, 'no_reply@davytyres.co.nz', [user.email])
             return render(request, 'registration/register-success.html', context)
+        else:
+            context['errors'] = user_form.errors
 
     return render(request, 'registration/registration_page.html', context)
 

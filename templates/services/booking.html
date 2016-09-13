@@ -1,30 +1,39 @@
 {% load staticfiles %}
 
+{% block jqueryui %}
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="{% static 'js/jquery-ui-timepicker-addon.js'%}"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui-timepicker-addon.css'%}">
+{% endblock %}
 
 <div class="booking-form">
-    <h1>Booking Form</h1>
-    {% block jqueryui %}
-        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-        <script src="{% static 'js/jquery-ui-timepicker-addon.js'%}"></script>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="{% static 'css/jquery-ui-timepicker-addon.css'%}">
-    {% endblock %}
+    <h1 text-align="center">Booking Form</h1>
+    <hr noshade size="5px">
     <script type="text/javascript">
         $(function() {
             $('#id_booking_time').datetimepicker();
         });
+        var servicesCalendar = "{{ services_calendar|escapejs }}";
     </script>
-    <form action="/services/detail/" method="post" class="form-horizontal">
+    <script src="{% static 'js/booking.js'%}"></script>
+    <form action="/services/detail/" method="post" class="form-horizontal" id="booking_form">
         {% csrf_token %}
         {% for field in booking_form %}
             {% if field.label != 'Customer' %}
                 <div id="booking-{{ field.label }}" class="form-group">
-                   <label class="col-xs-4 col-sm-4 col-md-4 control-label"  id = "label-form"> {{ field.label_tag }}</label>
-                  <div id = "booking-fields" class="booking-fields col-xs-6 col-sm-6 col-md-5">{{ field }}</div>
+                    <label class="col-xs-12 col-sm-4 col-md-4 control-label"  id = "label-form"> {{ field.label_tag }}</label>
+                  <div id = "booking-fields" class="booking-fields col-xs-12 col-sm-8 col-md-5">{{ field }}</div>
                 </div>
             {% endif %}
         {% endfor %}
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" class="booksub col-xs-12 col-sm-8 col-md-5 col-sm-offset-4 "/>
+       <div text-align="center">
+        <ul>
+        <li>New Customer! <a href="/register/">Register</a></li>
+        <li><a href="">Login!</a></li>
+            </ul>
+          </div>
     </form>
 </div>
 

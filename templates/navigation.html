@@ -1,36 +1,51 @@
 {%load staticfiles%}
-<nav class="navbar navbar-default ">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+ <img src= "{%static 'images/home/u13.GIF'%}" alt="Logo" width="150px" height="250px"class="sponsor-logo">
+<div class ="brand-box">
+<div class="brand-box container-fluid ">
+    <a href="/"><img src= "{%static 'images/DavySSLogo210x200.png'%}" alt="Logo" width="150px" height= "100px"class="davy-logo
+   col-xs-6 col-sm-3 col-md-3" align = "left"></a>
+  <div class="hidden-xs hidden-sm col-md-4 col-md-offset-6" id="address" align="left">
+    <a href="https://www.google.co.nz/maps/dir/''/daVY+TYRES/@-36.8739084,174.5576845,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x6d0d404a9021b4b7:0x965174423012537a!2m2!1d174.6277245!2d-36.8739289">
+      <br>
+    </a>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/services/detail/">Booking</a></li>
-        <li><a href="/catalogue/">Tyres</a></li>
-          <li><a href="/services/">Services</a></li>
-          <li><a href="/unimplemented/">Contact</a></li>
-      </ul>
-
-{#    <div class="input-group input-group navbar-right">#}
-{#         <span class="input-group-addon" id="sizing-addon3">#}
-{#             <a href="#" class="navIcon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>#}
-{#         </span>#}
-{#        <input type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon3" id="navInput">#}
-{#    </div>#}
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+</div>
+  </div>
 
 
+<ul class="topnav" id="myTopnav">
+    <li>
+    {% if user.is_authenticated %}
+          <a href="/services/bookings/" class="menuLog">
+            {{ request.user.first_name }}
+        </a>
+    {% else %}
+        <a href="/login">Login/Register
+        </a>
+    {% endif %}</li>
+  <li><a href="/services/detail/">Booking</a></li>
+  <li><a href="/catalogue/">Tyres</a></li>
+  <li><a href="/services/">Services</a></li>
+  <li><a href="/services/">Sales</a></li>
+    <li><a href="/services/">Tyre Measurements</a></li>
+    <li><a href="/davytyres/about-us/">About us</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars" aria-hidden="true"></i>
+</a>
+  </li>
+</ul>
+
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
 
 
 

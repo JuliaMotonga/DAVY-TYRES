@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for booking in bookings %}
-        <div>
+        <div >
             <p>Date/Time:</p> <div class = "date">{{ booking.booking_time }}</div>
             <p>Service:<p> <div id ="service_name">{{ booking }}</div>
             <p>Service Employee: {{ booking.service_employee.username }}<p>
