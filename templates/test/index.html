@@ -1,78 +1,81 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{%load staticfiles%}
-<div class="indexDesc hidden-xs">
-       <marquee direction="left" loop="40" width="100%" scrollamount="3">
-          We provide the best services for you.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  Any type of tyres.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Please Check out our specials.
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                           You can book online services with us and recieve nitroFill for free.
-       </marquee>
-</div>
-<div class="carouselHome col-md-offset-right-2 ">
-<div class="gallery js-flickity" data-flickity='{ "autoPlay": 10000, "pauseAutoPlayOnHover": false }'>
-  <div class="gallery-cell"><img src= "{%static 'images/dulop xpres.jpg'%}"></div>
-  <div class="gallery-cell"><img src= "{%static 'images/Michelin2013WinterPromoAsset-640x244.jpg'%}"></div>
-  <div class="gallery-cell"><img src= "{%static 'images/GYCA_RebateTile_011416.jpg'%}"></div>
-  <div class="gallery-cell"><img src= "{%static 'images/aHR0cDo vL3d3dy5tYXJrcXVhcnRtb3RvcnMuY29tL2Jsb2dzLzMyNS93cC1jb250ZW50L3VwbG9hZHMvMjAxNC8wOS90aXJlLXJlYmF0ZS1ibG9nLmpwZw.jpg'%}"></div>
-  <div class="gallery-cell"><img src= "{%static 'images/Michelin2013WinterPromoAsset-640x244.jpg'%}"></div>
-</div>
+    {% load staticfiles %}
+    <div class="carouselHome col-md-offset-right-2 ">
+        <div class="gallery js-flickity" data-flickity='{ "autoPlay": 10000, "pauseAutoPlayOnHover": false }'>
+            <div class="gallery-cell"><img src="{% static 'images/dulop xpres.jpg' %}"></div>
+            <div class="gallery-cell"><img src="{% static 'images/Michelin2013WinterPromoAsset-640x244.jpg' %}"></div>
+            <div class="gallery-cell"><img src="{% static 'images/GYCA_RebateTile_011416.jpg' %}"></div>
+            <div class="gallery-cell"><img
+                    src="{% static 'images/aHR0cDo vL3d3dy5tYXJrcXVhcnRtb3RvcnMuY29tL2Jsb2dzLzMyNS93cC1jb250ZW50L3VwbG9hZHMvMjAxNC8wOS90aXJlLXJlYmF0ZS1ibG9nLmpwZw.jpg' %}">
+            </div>
+            <div class="gallery-cell"><img src="{% static 'images/Michelin2013WinterPromoAsset-640x244.jpg' %}"></div>
+        </div>
     </div>
 
-<div class="col-md-3 hidden-xs hidden-sm">
-{%include "catalogue/tyre-calculator.html"%}
-  </div>
-<br>
-<br>
-<hr>
-<div class="imgServiceIndex hidden-xs ">
-  <div>All Type Of Tyres<img src= "{%static 'images/servicesIndex/1416927181159620.jpg'%}"><div>
-     We can supply and fit the most suitable tyres for your vehicle no matter what you drive or what your driving needs are.
-      Whether you drive the family people mover doing all those important jobs or a touring sedan,
-      classic car, or hi-performance machine, we have the tyres for you. We also have a good range
-      of secondhand tyres.
-  </div></div>
-  <div>Heavy Machinery<img src= "{%static 'images/servicesIndex/FillWyI4MDAiLCI0MDAiXQ-image2.jpg'%}">
-      <div>We have a team of professional fleet service technicians with four fleet service trucks enabling us to service a large area at anytime from Silverdale to Wiri.
-          Not only are truck fleets serviced,
-          but anything with rubber tyres – tractors, trailers, pay loaders, you name it – we can service it.</div></div>
-  <div>Rims<img src= "{%static 'images/servicesIndex/images.jpeg'%}"><div>
-     Vehicle Compliance: All imported vehicles must comply with the strict regulations of New Zealand’s vehicle import laws.
-      We are certified to carry out inspections and issue vehicle compliance for imported vehicles.
-  </div></div>
-  <div>Shock Absorbers<img src= "{%static 'images/servicesIndex/imagesshock.jpeg'%}">
-      <div>
-We can supply and fit all of the worlds leading brands of shock absorbers.
-          Servicing of the Billstein and Tein brands through our S
-          hocks Shop Suspension franchise is also available.
-  </div></div>
-  </div>
-<br>
-<hr>
-
-<h3 class ="hidden-xs"style="text-align:center;">Our Henderson Store</h3>
-<div class="imgDavy hidden-xs ">
-  <div><img src= "{%static 'images/davyPhotos/IMG_1139.JPG'%}"></div>
-  <div><img src= "{%static 'images/davyPhotos/IMG_1111.JPG'%}"></div>
-  <div><img src= "{%static 'images/davyPhotos/IMG_1148.JPG'%}"></div>
-  </div>
-<br>
-<div class="review hidden-xs">
+    <div class="col-md-3 hidden-xs hidden-sm">
+        {% include "catalogue/tyre-calculator.html" %}
+    </div>
+    <br>
+    <br>
     <hr>
-    <h3 style="text-align:center;">Reviews</h3>
-    <div></div>
+    <div class="imgServiceIndex hidden-xs ">
+        <div>All Type Of Tyres<img src="{% static 'images/servicesIndex/1416927181159620.jpg' %}">
+            <div>
+                We can supply and fit the most suitable tyres for your vehicle no matter what you drive or what your
+                driving needs are.
+                Whether you drive the family people mover doing all those important jobs or a touring sedan,
+                classic car, or hi-performance machine, we have the tyres for you. We also have a good range
+                of secondhand tyres.
+            </div>
+        </div>
+        <div>Heavy Machinery<img src="{% static 'images/servicesIndex/FillWyI4MDAiLCI0MDAiXQ-image2.jpg' %}">
+            <div>We have a team of professional fleet service technicians with four fleet service trucks enabling us to
+                service a large area at anytime from Silverdale to Wiri.
+                Not only are truck fleets serviced,
+                but anything with rubber tyres – tractors, trailers, pay loaders, you name it – we can service it.
+            </div>
+        </div>
+        <div>Rims<img src="{% static 'images/servicesIndex/images.jpeg' %}">
+            <div>
+                Vehicle Compliance: All imported vehicles must comply with the strict regulations of New Zealand’s
+                vehicle import laws.
+                We are certified to carry out inspections and issue vehicle compliance for imported vehicles.
+            </div>
+        </div>
+        <div>Shock Absorbers<img src="{% static 'images/servicesIndex/imagesshock.jpeg' %}">
+            <div>
+                We can supply and fit all of the worlds leading brands of shock absorbers.
+                Servicing of the Billstein and Tein brands through our S
+                hocks Shop Suspension franchise is also available.
+            </div>
+        </div>
+    </div>
+    <br>
     <hr>
-</div>
+
+    <h3 class="hidden-xs" style="text-align:center;">Our Henderson Store</h3>
+    <div class="imgDavy hidden-xs ">
+        <div><img src="{% static 'images/davyPhotos/IMG_1139.JPG' %}"></div>
+        <div><img src="{% static 'images/davyPhotos/IMG_1111.JPG' %}"></div>
+        <div><img src="{% static 'images/davyPhotos/IMG_1148.JPG' %}"></div>
+    </div>
+    <br>
+    <div class="review hidden-xs">
+        <hr>
+        <h3 style="text-align:center;">Reviews</h3>
+        <div></div>
+        <hr>
+    </div>
 
 
-<script>
-var flkty = new Flickity( '.main-gallery', {
-  // options
-  cellAlign: 'left',
-  contain: true
-});
-</script>
+    <script>
+        var flkty = new Flickity('.main-gallery', {
+            // options
+            cellAlign: 'left',
+            contain: true
+        });
+    </script>
 
 {% endblock %}
-
