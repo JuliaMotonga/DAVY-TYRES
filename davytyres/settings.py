@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'bookings.BaseUser'
 
-MYSQL = False
+MYSQL = True
 
 # Application definition
 
