@@ -11,6 +11,9 @@
     <h1 text-align="center">Booking Form</h1>
     <hr noshade size="5px">
     <script type="text/javascript">
+        $(function() {
+            $('#id_booking_time').datetimepicker();
+        });
         var servicesCalendar = "{{ services_calendar|escapejs }}";
     </script>
     <script src="{% static 'js/booking.js'%}"></script>
