@@ -1,5 +1,4 @@
 $(function() {
-    alert(servicesCalendar);
     var cal = JSON.parse(servicesCalendar);
     var DAY_LOOKUPS = {'sunday': 0, 'monday': 1, 'tuesday': 2, 'wednesday': 3, 'thursday': 4, 'friday': 5, 'saturday': 6};
     var getUnavailableDays = function(service_id){
@@ -21,7 +20,6 @@ $(function() {
         }
         return unavailableDays;
     };
-    alert('datepicker config running now');
     $('#id_booking_time').datetimepicker({
         onSelect: function(dateText, inst) {
             console.log('selected!');
