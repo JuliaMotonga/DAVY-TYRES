@@ -71,6 +71,8 @@ def register(request, redirect=None):
             send_mail('user registration for {} at davytyres.co.nz'.format(user.first_name),
                       email_body, 'no_reply@davytyres.co.nz', [user.email])
             return render(request, 'registration/register-success.html', context)
+        else:
+            context['errors'] = user_form.errors
 
     return render(request, 'registration/registration_page.html', context)
 

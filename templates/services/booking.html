@@ -15,6 +15,7 @@
             $('#id_booking_time').datetimepicker();
         });
     </script>
+    <script src="{% static 'js/booking.js'%}"></script>
     <form action="/services/detail/" method="post" class="form-horizontal" id="booking_form">
         {% csrf_token %}
         {% for field in booking_form %}

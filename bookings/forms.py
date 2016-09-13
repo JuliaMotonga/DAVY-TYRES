@@ -1,4 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
+from django.core.exceptions import ValidationError
 from django.forms import ModelForm
 from bookings.models import Booking, BaseUser
 
@@ -19,10 +20,17 @@ class BookingForm(ModelForm):
 
 
 class RegistrationForm(UserCreationForm):
-    class Meta:
+    class Meta(UserCreationForm.Meta):
         model = BaseUser
 
         fields = ['first_name', 'last_name', 'email', 'phone', 'registration_number']
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        users = BaseUser.objects.filter(email=email)
+        if users:
+            raise ValidationError('That email already exists')
+        return email
 
     def save(self, commit=True):
         user = super(RegistrationForm, self).save(commit=False)
