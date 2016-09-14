@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div style="height: 500px;">
-        <p>Great! {{ customer.user.username }}, your {{ service.name }} booking is set for {{ booking_time }}
+  <div class="davymessage">
+         <p>Great! {{ customer.user.username }}, your {{ service.name }} booking is set for {{ booking_time }}
             {% if customer.user.email %}
                 We've also sent the booking details to {{ customer.user.email }}.
             {% endif %}
         </p>
     </div>
+<a a href="/services/detail/" class="btn" style="float:left;"> <i class="fa fa-backward fa-3x"  aria-hidden="true"></i> Back</a>
+
+<a href="/"  class="btn" style="float:right;"> <i class="fa fa-home fa-3x" aria-hidden="true"></i> home</a>
+<br><br>
 
 {% endblock %}

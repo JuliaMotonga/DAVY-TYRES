@@ -1,16 +1,10 @@
 {%load staticfiles%}
- <img src= "{%static 'images/home/u13.GIF'%}" alt="Logo" width="150px" height="250px"class="sponsor-logo">
 <div class ="brand-box">
-<div class="brand-box container-fluid ">
-    <a href="/"><img src= "{%static 'images/DavySSLogo210x200.png'%}" alt="Logo" width="150px" height= "100px"class="davy-logo
-   col-xs-6 col-sm-3 col-md-3" align = "left"></a>
-  <div class="hidden-xs hidden-sm col-md-4 col-md-offset-6" id="address" align="left">
-    <a href="https://www.google.co.nz/maps/dir/''/daVY+TYRES/@-36.8739084,174.5576845,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x6d0d404a9021b4b7:0x965174423012537a!2m2!1d174.6277245!2d-36.8739289">
-      <br>
+    <a href="/"><img src= "{%static 'images/DavySSLogo210x200.png'%}" alt="Logo" height="180px"class="davy-logo
+   col-xs-4 col-sm-4 col-md-3"></a>
     </a>
     </div>
-</div>
-  </div>
+
 
 
 <ul class="topnav" id="myTopnav">
@@ -20,15 +14,15 @@
             {{ request.user.first_name }}
         </a>
     {% else %}
-        <a href="/login">Login/Register
+        <a href="/login">LOGIN/REGISTER
         </a>
     {% endif %}</li>
-  <li><a href="/services/detail/">Booking</a></li>
-  <li><a href="/catalogue/">Tyres</a></li>
-  <li><a href="/services/">Services</a></li>
-  <li><a href="/services/">Sales</a></li>
-    <li><a href="/services/">Tyre Measurements</a></li>
-    <li><a href="/davytyres/about-us/">About us</a></li>
+  <li><a href="/services/detail/">BOOKING</a></li>
+  <li><a href="/catalogue/">TYRES</a></li>
+  <li><a href="/services/">SERVICES</a></li>
+  <li><a href="/davytyres/deals/">SALES</a></li>
+    <li><a href="/services/">TYRE MEASUREMENTS</a></li>
+    <li><a href="/davytyres/about-us/">ABOUT US</a></li>
   <li class="icon">
     <a href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars" aria-hidden="true"></i>
 </a>

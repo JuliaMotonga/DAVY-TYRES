@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    Please visit your email {{ user_form.data.email }} and click the link to activate your account.
+
+  <div class="davymessage">
+        <p>  Please visit your email {{ user_form.data.email }} and click the link to activate your account.</p>
+    </div>
+<a href="/login" class="btn" style="float:left;"> <i class="fa fa-backward fa-3x"  aria-hidden="true"></i> Back</a>
+
+<a href="/"  class="btn" style="float:right;"> <i class="fa fa-home fa-3x" aria-hidden="true"></i> home</a>
+<br><br>
+
 {% endblock %}

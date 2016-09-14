@@ -29,7 +29,8 @@ urlpatterns = [
     url(r'^catalogue/', views.catalogue),
     url(r'^activate/(?P<activation>\w+)/(?P<email>\w+)/$', views.activate),
     url(r'unimplemented/', views.unimplemented),
-    url(r'about-us', views.about_us)
+    url(r'about-us', views.about_us),
+    url(r'deals', views.deals)
 
 ]
 
