@@ -41,6 +41,8 @@ def unimplemented(request):
 def about_us(request):
     return render(request, "davytyres/about-us.html")
 
+def deals(request):
+    return render(request, "davytyres/deals.html")
 
 def auth_view(request):
     username = request.POST.get('username')

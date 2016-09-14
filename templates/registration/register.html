@@ -10,14 +10,14 @@
     <hr noshade size="5px">
     {% csrf_token %}
     {% for field in user_form %}
-
+         <div>
+            {{field.errors}}
+        </div>
     <div id="register-{{ field.label }}" class="form-group">
             <label class=" control-label col-xs-12 col-sm-4 col-md-4 " > {{ field.label_tag }}</label>
             <div class="col-xs-12 col-sm-8 col-md-5"> {{ field }}</div>
         </div>
-        <div>
-            {{field.errors}}
-        </div>
+
     {% endfor %}
     <input type="submit" value="Submit" class="booksub col-xs-12 col-sm-8 col-md-5 col-sm-offset-4">
 </form>

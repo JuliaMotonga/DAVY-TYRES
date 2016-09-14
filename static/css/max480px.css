@@ -2,17 +2,18 @@
 
 body {
 margin:0;
-font-size:12px;
+font-size:20px;
 
 }
 
 ul.topnav {
   list-style-type: none;
-  margin-top: -30px;
+  margin-top:-30px;
   padding: 0;
   overflow: hidden;
   background-color: #ffff00;
-  width:100%;
+  width:99%;
+
 
 }
 
@@ -27,7 +28,7 @@ ul.topnav li a {
   padding: 14px 16px;
   text-decoration: none;
   transition: 0.3s;
-  font-size: 12px;
+  font-size: 30px;
 }
 
 ul.topnav {
@@ -62,7 +63,7 @@ display:none;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-size: 12px;
+    font-size: 20px;
 
 
 }
@@ -75,7 +76,7 @@ display:none;
     border: none;
     cursor: pointer;
     width: 100%;
-   font-size: 12px;
+   font-size: 40px;
 }
 
 
@@ -89,7 +90,7 @@ display:inline-block;
 color: #000033;
 margin: 8px 0;
 padding: 12px;
-font-size: 12px;
+font-size: 20px;
 }
 
 
@@ -99,7 +100,7 @@ font-size: 12px;
  border: none;
  padding:10px;
 margin-top:30px;
-font-size: 12px;
+font-size: 20px;
 
 }
 
@@ -110,7 +111,7 @@ font-size: 12px;
     display: inline-block;
     border: 0.2px solid #000033;
     box-sizing: border-box;
-    font-size: 12px;
+    font-size: 20px;
     border-radius: 3px;
 
     }
@@ -122,7 +123,7 @@ font-size: 12px;
     display: inline-block;
     border: 0.2px solid #000033;
     box-sizing: border-box;
-    font-size: 12px;
+    font-size: 40px;
     border-radius: 3px;
     }
 
@@ -134,13 +135,13 @@ font-size: 12px;
     border: none;
     cursor: pointer;
     width: 80%;
-    font-size: 12px;
+    font-size: 20px;
     border-radius:3px;
 
    }
 
 .booking-form h1{
-font-size: 14px;
+font-size: 20px;
 text-align:center;
 font-weight:900;
 }

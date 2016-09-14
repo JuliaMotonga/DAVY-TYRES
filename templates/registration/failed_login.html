@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    Login failed
+    <div class="davymessage">
+        <p> Failed to Login. Please check your details and try again</p>
+    </div>
+<a href="/login" class="btn" style="float:left;"> <i class="fa fa-backward fa-3x"  aria-hidden="true"></i> Back</a>
+
+<a href="/"  class="btn" style="float:right;"> <i class="fa fa-home fa-3x" aria-hidden="true"></i> home</a>
+<br><br>
 {% endblock %}

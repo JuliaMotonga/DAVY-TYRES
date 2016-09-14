@@ -4,7 +4,7 @@
 <head>
     <title>Header Davy Tyres </title>
     <link href="{% static 'css/base.css' %}" type="text/css" rel="stylesheet"/>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Open+Sans|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'fonts-font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/max480px.css' %}" media="screen and (max-device-width:480px)">
     <link rel="stylesheet" href="{% static 'css/max1024px.css' %}"
@@ -25,30 +25,32 @@
 </head>
 
 <body>
+<div class="conatiner-fluid">
 <div class="row">
-    <aside class=" header hidden-xs hidden-sm col-md-1"></aside>
-    <section class="header col-xs-12 col-sm-12 col-md-10 " align="center">
+    <aside class="header hidden-xs hidden-sm col-md-1"></aside>
+    <section class="header col-xs-12 col-sm-12 col-md-10">
         {% include "header.html" %}
     </section>
     <aside class="header hidden-xs hidden-sm col-md-1"></aside>
+        </div>
 </div>
-
 <div class="conatiner-fluid">
     <div class="row">
         <aside class="hidden-xs hidden-sm col-md-1"></aside>
         <section class="col-xs-12 col-sm-12 col-md-10 col-lg-10 " align="center">
             {% block content %}{% endblock %}
-            {% include "affiliates.html" %}
         </section>
         <aside class="hidden-xs hidden-sm col-md-1"></aside>
     </div>
 </div>
+<div class="conatiner-fluid">
 <div class="row">
-    <aside class="footer hidden-xs hidden-sm col-md-1 "></aside>
-    <section class="footer col-xs-12 col-sm-10 col-md-10 " align="center">
+    <aside class="footer hidden-xs hidden-sm col-md-1"></aside>
+    <section class="footer col-xs-12 col-sm-12 col-md-10">
         {% include "footer.html" %}
     </section>
-    <aside class="footer hidden-xs hidden-sm col-md-1 "></aside>
+    <aside class="footer hidden-xs hidden-sm col-md-1"></aside>
 </div>
+    </div>
 </body>
 </html>

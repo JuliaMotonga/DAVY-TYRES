@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
- <p>Hi {{ user.first_name }}, welcome back.</p>
+  <div class="davymessage">
+        <p> Hi {{ user.first_name }}, welcome back.</p>
+    </div>
+<a href="/login" class="btn" style="float:left;"> <i class="fa fa-backward fa-3x"  aria-hidden="true"></i> Back</a>
+
+<a href="/"  class="btn" style="float:right;"> <i class="fa fa-home fa-3x" aria-hidden="true"></i> home</a>
+<br><br>
 
 {% endblock %}
