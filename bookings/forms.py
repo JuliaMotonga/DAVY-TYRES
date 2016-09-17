@@ -8,8 +8,12 @@ class BookingForm(ModelForm):
     class Meta:
         model = Booking
 
-        fields = ['customer', 'service', 'service_employee', 'booking_time', 'additional_information',
+        fields = ['customer', 'service', 'service_employee', 'booking_day', 'booking_time', 'additional_information',
                   'registration_number']
+
+    def __init__(self, *args, **kwargs):
+        super(BookingForm, self).__init__(*args, **kwargs)
+        self.fields['registration_number'].label = "Car registration Number"
 
     def submit(self):
         if self.is_valid():
