@@ -1,0 +1,8 @@
+Django==1.8.13
+django-admin-bootstrapped==2.5.7
+django-simple-email-confirmation==0.12
+psycopg2==2.6.2
+pytz==2016.6.1
+send-email==201212
+wheel==0.24.0
+whitenoise==3.2.1

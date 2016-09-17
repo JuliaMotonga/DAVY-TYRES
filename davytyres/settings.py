@@ -16,8 +16,7 @@ import os
 from os.path import normpath, join
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -30,7 +29,7 @@ DEPLOY = True
 
 DEBUG = True if not DEPLOY else False
 
-ALLOWED_HOSTS = ['davy-tyres.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'bookings.BaseUser'
 
@@ -64,18 +63,8 @@ EMAIL_HOST_USER = 'davytyrestest@gmail.com'
 EMAIL_ADMIN_USER = 'davytyrestest@gmail.com'
 EMAIL_HOST_PASSWORD = 'admin123!'
 
-
 PRODUCTION_DOMAIN = 'http://davy-tyres.herokuapp.com/'
-
 HOST_DOMAIN = 'localhost:8000' if not DEPLOY else PRODUCTION_DOMAIN
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
-
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, 'static/')
-]
-
-STATIC_URL = '/static/'
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,6 +75,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'davytyres.urls'
@@ -158,6 +148,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
