@@ -103,15 +103,14 @@ http://flickity.metafizzy.co
 /* ---- page dots ---- */
 
 .flickity-page-dots {
-  position: absolute;
   width: 100%;
-  bottom: -25px;
   padding: 0;
   margin-bottom:20px;
   margin: 0;
   list-style: none;
   text-align: center;
   line-height: 1;
+
 }
 
 .flickity-rtl .flickity-page-dots { direction: rtl; }
@@ -125,7 +124,7 @@ http://flickity.metafizzy.co
   border-radius: 50%;
   opacity: 0.50;
   cursor: pointer;
- ;
+ margin-top: 40px;
 }
 
 .flickity-page-dots .dot.is-selected {
