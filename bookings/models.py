@@ -9,26 +9,33 @@ from django.core import validators
 
 
 class TimeRange(models.Model):
-    name = models.CharField(max_length=20, null=True, )
     start = models.TimeField()
     end = models.TimeField()
 
     def __unicode__(self):
-        return self.name
+        return "{} - {}".format(self.start, self.end)
 
 
 class AvailabilityCalender(models.Model):
     name = models.CharField(max_length=30)
-    monday = models.ForeignKey(TimeRange, related_name='monday_time_range', on_delete=models.CASCADE)
-    tuesday = models.ForeignKey(TimeRange, related_name='tuesday_time_range', on_delete=models.CASCADE)
-    wednesday = models.ForeignKey(TimeRange, related_name='wednesday_time_range', on_delete=models.CASCADE)
-    thursday = models.ForeignKey(TimeRange, related_name='thursday_time_range', on_delete=models.CASCADE)
-    friday = models.ForeignKey(TimeRange, related_name='friday_time_range', on_delete=models.CASCADE)
-    saturday = models.ForeignKey(TimeRange, related_name='saturday_time_range', on_delete=models.CASCADE)
-    sunday = models.ForeignKey(TimeRange, related_name='sunday_time_range', on_delete=models.CASCADE)
+    monday = models.BooleanField(default=True)
+    tuesday = models.BooleanField(default=True)
+    wednesday = models.BooleanField(default=True)
+    thursday = models.BooleanField(default=True)
+    friday = models.BooleanField(default=True)
+    saturday = models.BooleanField(default=True)
+    sunday = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.name
+
+
+class StoreClosedDates(models.Model):
+    date = models.DateField(null=True)
+    name = models.CharField(max_length=40)
+
+    def __unicode__(self):
+        return "{}: {}".format(self.name, self.date)
 
 
 class BaseUser(AbstractBaseUser, PermissionsMixin, SimpleEmailConfirmationUserMixin):
@@ -76,7 +83,7 @@ class BaseUser(AbstractBaseUser, PermissionsMixin, SimpleEmailConfirmationUserMi
 
 
 class Service(models.Model):
-    time_allocated = models.ForeignKey(TimeRange)
+    time_slots = models.ManyToManyField(TimeRange)
     availability = models.ForeignKey(AvailabilityCalender)
     name = models.CharField(max_length=30)
     cost = models.DecimalField(max_digits=6, decimal_places=2)
@@ -88,10 +95,6 @@ class Service(models.Model):
     @property
     def price(self):
         return "${}".format(self.cost)
-
-    @property
-    def time_length(self):
-        return self.time_allocated.start - self.time_allocated.end
 
 
 class Booking(models.Model):

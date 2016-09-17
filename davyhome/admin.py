@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from davyhome.models import Catalogue, Tyre, PriceRange, SaleValue
-from bookings.models import AvailabilityCalender, Booking, Service, TimeRange, BaseUser
+from bookings.models import AvailabilityCalender, Booking, Service, TimeRange, BaseUser, StoreClosedDates
 
 
 class CatalogueAdmin(admin.ModelAdmin):
@@ -26,6 +26,10 @@ class BookingAdmin(admin.ModelAdmin):
     list_filter = ['status', 'service']
 
 
+class StoreClosedDatesAdmin(admin.ModelAdmin):
+    pass
+
+
 class ServiceAdmin(admin.ModelAdmin):
     pass
 
@@ -35,6 +39,7 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ['email', 'first_name', 'is_staff', 'phone', 'registration_number']
     list_filter = ['is_staff', 'is_active']
     pass
+
 
 class AvailabilityCalenderAdmin(admin.ModelAdmin):
     pass
@@ -53,3 +58,4 @@ admin.site.register(TimeRange, TimeRangeAdmin)
 admin.site.register(Tyre, TyreAdmin)
 admin.site.register(PriceRange, PriceRangeAdmin)
 admin.site.register(SaleValue, SaleValueAdmin)
+admin.site.register(StoreClosedDates, StoreClosedDatesAdmin)

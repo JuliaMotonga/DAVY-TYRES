@@ -1,0 +1,106 @@
+/**navigation**/
+@media screen and (max-width: 1024px){
+ul.topnav {
+  list-style-type: none;
+  margin-top: -30px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffff00;
+  width:99%;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #000033;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 20px;
+}
+/**brand box**/
+.sponsor-logo{
+display:none;
+}
+
+/**login Form**/
+
+.login_form {
+    margin-top:30px;
+    border: 3px solid #f1f1f1;
+    padding:40px;
+}
+
+.login_form label{
+display:none;
+}
+
+
+.login_form input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px ;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 14px;
+
+
+}
+
+.blog {
+    background-color:#000033 ;
+    color: white;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+   font-size: 20px;
+}
+
+
+.container {
+    padding: 16px;
+}
+
+
+.login_form li {
+display:inline-block;
+color: #000033;
+margin: 8px 0;
+padding: 12px 10px;
+font-size: 20px;
+}
+
+/*carousel*/
+.gallery-cell {
+  width: 100%;
+  height: 200px;
+  margin-right: 20px;
+
+}
+.carouselHome{
+margin-top:20px;
+}
+/* full width cells by default */
+.gallery-cell img{
+  width: 100%;
+  height:250px;
+  }
+
+.tyres{
+display:none;
+}
+.col-md-offset-right-2{
+margin-left:0px;
+}
+
+.tyre-calculator{
+display:none
+}
+
+
+}

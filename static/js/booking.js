@@ -7,14 +7,13 @@ $(function() {
             if (service_id != cal[service]['id']){
                 continue;
             }
-            for (var day in cal[service]['availability']){
-                var start = cal[service]['availability'][day]['start'],
-                    end = cal[service]['availability'][day]['end'],
-                    name = cal[service]['availability'][day]['name'];
-                if (start == end){
-                    unavailableDays.push(DAY_LOOKUPS[name]);
+            cal[service]['days_of_week'].forEach(function (day){
+                for (var key in day){
+                    if (!day[key]){
+                        unavailableDays.push(DAY_LOOKUPS[key]);
+                    }
                 }
-            }
+            });
         }
         return unavailableDays;
     };

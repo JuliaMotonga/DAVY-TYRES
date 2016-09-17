@@ -49,13 +49,21 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=30)),
+                ('monday', models.BooleanField(default=True)),
+                ('tuesday', models.BooleanField(default=True)),
+                ('wednesday', models.BooleanField(default=True)),
+                ('thursday', models.BooleanField(default=True)),
+                ('friday', models.BooleanField(default=True)),
+                ('saturday', models.BooleanField(default=True)),
+                ('sunday', models.BooleanField(default=True)),
             ],
         ),
         migrations.CreateModel(
             name='Booking',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('booking_time', models.DateTimeField()),
+                ('booking_day', models.DateField(null=True)),
+                ('booking_time', models.TimeField(null=True)),
                 ('status', models.CharField(default=('CF', 'Confirmed'), max_length=20, choices=[('CF', 'Confirmed'), ('CM', 'Completed'), ('UF', 'Unfulfilled'), ('CN', 'Canceled')])),
                 ('additional_information', models.TextField()),
                 ('registration_number', models.CharField(max_length=10, null=True)),
@@ -73,18 +81,25 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
+            name='StoreClosedDates',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('date', models.DateField(null=True)),
+                ('name', models.CharField(max_length=40)),
+            ],
+        ),
+        migrations.CreateModel(
             name='TimeRange',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(max_length=20, null=True)),
                 ('start', models.TimeField()),
                 ('end', models.TimeField()),
             ],
         ),
         migrations.AddField(
             model_name='service',
-            name='time_allocated',
-            field=models.ForeignKey(to='bookings.TimeRange'),
+            name='time_slots',
+            field=models.ManyToManyField(to='bookings.TimeRange'),
         ),
         migrations.AddField(
             model_name='booking',
@@ -95,40 +110,5 @@ class Migration(migrations.Migration):
             model_name='booking',
             name='service_employee',
             field=models.ForeignKey(related_name='employee', to=settings.AUTH_USER_MODEL),
-        ),
-        migrations.AddField(
-            model_name='availabilitycalender',
-            name='friday',
-            field=models.ForeignKey(related_name='friday_time_range', to='bookings.TimeRange'),
-        ),
-        migrations.AddField(
-            model_name='availabilitycalender',
-            name='monday',
-            field=models.ForeignKey(related_name='monday_time_range', to='bookings.TimeRange'),
-        ),
-        migrations.AddField(
-            model_name='availabilitycalender',
-            name='saturday',
-            field=models.ForeignKey(related_name='saturday_time_range', to='bookings.TimeRange'),
-        ),
-        migrations.AddField(
-            model_name='availabilitycalender',
-            name='sunday',
-            field=models.ForeignKey(related_name='sunday_time_range', to='bookings.TimeRange'),
-        ),
-        migrations.AddField(
-            model_name='availabilitycalender',
-            name='thursday',
-            field=models.ForeignKey(related_name='thursday_time_range', to='bookings.TimeRange'),
-        ),
-        migrations.AddField(
-            model_name='availabilitycalender',
-            name='tuesday',
-            field=models.ForeignKey(related_name='tuesday_time_range', to='bookings.TimeRange'),
-        ),
-        migrations.AddField(
-            model_name='availabilitycalender',
-            name='wednesday',
-            field=models.ForeignKey(related_name='wednesday_time_range', to='bookings.TimeRange'),
         ),
     ]
