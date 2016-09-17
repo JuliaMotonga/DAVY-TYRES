@@ -19,8 +19,8 @@ from bookings import views as booking_views
 from davyhome import views as basic_views
 from django.conf.urls import url
 
-
 from davyhome import views
+from davytyres import settings
 
 urlpatterns = [
     url(r'^$', views.index),
@@ -33,8 +33,6 @@ urlpatterns = [
     url(r'deals', views.deals)
 
 ]
-
-
 
 authentication = [
     url(r'^logindenied/$', views.logindenied),
@@ -54,4 +52,5 @@ services = [
 ]
 
 urlpatterns += authentication + services
+urlpatterns += [url(r'^static/(.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT})]
 

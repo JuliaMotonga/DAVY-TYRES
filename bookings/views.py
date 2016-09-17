@@ -1,6 +1,4 @@
 import json
-
-from django.forms import forms
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.core.serializers.json import DjangoJSONEncoder
@@ -33,7 +31,7 @@ def service_detail(request):
             service = Service.objects.filter(id=form.data['service'])[0]
             booking_time = form.data['booking_time']
             email_body = " Hi {}, your booking for {} has been set for {} if you would like to cancel, please visit " \
-                         "http://{}/{}".format(customer.first_name, service.name, booking_time, settings.HOST_DOMAIN,
+                         "https://{}/{}".format(customer.first_name, service.name, booking_time, settings.HOST_DOMAIN,
                                                'services/bookings')
             send_mail('Booking confirmation for {}.'.format(customer.first_name), email_body,
                       'no_reply@davytyres.co.nz', [customer.email])

@@ -16,8 +16,6 @@ import os
 from os.path import normpath, join
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -25,15 +23,13 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'vql#l=m47a**26bd$ybsr^b73_nqo(*dgh&vd+01(@vw99y2!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEPLOY = True
-
-DEBUG = True if not DEPLOY else False
-
+DEPLOY = False
+# DEBUG = False if DEPLOY else True
+DEBUG = True
+MYSQL = False if DEPLOY else True
 ALLOWED_HOSTS = ['*']
-
 AUTH_USER_MODEL = 'bookings.BaseUser'
-
-MYSQL = False
+HOST_DOMAIN = 'davy-tyres.herokuapp.com'
 
 # Application definition
 
@@ -50,10 +46,6 @@ INSTALLED_APPS = [
     'simple_email_confirmation',
 ]
 
-# if DEBUG:
-#     EMAIL_HOST = 'localhost'
-#     EMAIL_PORT = '1025'
-# else:
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -64,10 +56,11 @@ EMAIL_ADMIN_USER = 'davytyrestest@gmail.com'
 EMAIL_HOST_PASSWORD = 'admin123!'
 
 PRODUCTION_DOMAIN = 'http://davy-tyres.herokuapp.com/'
-HOST_DOMAIN = 'localhost:8000' if not DEPLOY else PRODUCTION_DOMAIN
+# HOST_DOMAIN = 'localhost:8000' if not DEPLOY else PRODUCTION_DOMAIN
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,7 +68,6 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'davytyres.urls'
@@ -101,7 +93,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'davytyres.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
@@ -124,10 +115,8 @@ if not MYSQL:
         }
     }
 
-
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 SESSION_COOKIE_HTTPONLY = True
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -148,22 +137,20 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
