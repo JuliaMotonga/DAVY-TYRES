@@ -54,6 +54,29 @@ $(function() {
         scrollbar: true
     });
 
+    var setupTimeSlots = function () {
+        var $hiddenTimeField = $('#id_booking_time').parent().parent(),
+            $slots = $('#service_slots div[data-time]');
+
+        $slots.click(function (){
+            var time = $(this).data('time');
+            $(this).css({'background-color': '#FFEEFF'})
+
+        });
+        $('#service_slots').detach().appendTo($hiddenTimeField);
+        $('div[data-service]').hide();
+    };
+    setupTimeSlots();
+
+    $('#id_booking_day').change(function(){
+        if ($('#id_service').val() && $('#id_booking_day').val()) {
+            var service_id = $('#id_service').val();
+            console.log('service_id');
+            console.log($('div[data-service=service_id]'));
+            $('div[data-service='+service_id+']').show();
+        }
+    })
+
 });
 
 

@@ -1,4 +1,6 @@
 import json
+
+from django.forms import forms
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.core.serializers.json import DjangoJSONEncoder
@@ -46,9 +48,9 @@ def service_detail(request):
                         "days_of_week": days_of_week(service)
                         } for service in Service.objects.all()]
 
+    context['service_slots'] = services_struct
     context['services_calendar'] = json.dumps(services_struct, cls=DjangoJSONEncoder)
     context['booking_form'] = form
-
     return render(request, "services/service-details.html", context)
 
 

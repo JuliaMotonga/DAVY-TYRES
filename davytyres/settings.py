@@ -25,13 +25,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vql#l=m47a**26bd$ybsr^b73_nqo(*dgh&vd+01(@vw99y2!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEPLOY = True
+
+DEBUG = True if not DEPLOY else False
 
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'bookings.BaseUser'
 
-MYSQL = True
+MYSQL = False
 
 # Application definition
 
@@ -60,7 +62,8 @@ SERVER_EMAIL = 'davytyrestest@gmail.com'
 EMAIL_HOST_USER = 'davytyrestest@gmail.com'
 EMAIL_ADMIN_USER = 'davytyrestest@gmail.com'
 EMAIL_HOST_PASSWORD = 'admin123!'
-HOST_DOMAIN = 'localhost:8000'
+PRODUCTION_DOMAIN = 'http://davy-tyres.herokuapp.com/'
+HOST_DOMAIN = 'localhost:8000' if not DEPLOY else PRODUCTION_DOMAIN
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets', )

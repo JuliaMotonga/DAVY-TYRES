@@ -1,3 +1,4 @@
+from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 from django.forms import ModelForm
@@ -10,6 +11,10 @@ class BookingForm(ModelForm):
 
         fields = ['customer', 'service', 'service_employee', 'booking_day', 'booking_time', 'additional_information',
                   'registration_number']
+
+        widgets = {
+            'booking_time': forms.HiddenInput()
+        }
 
     def __init__(self, *args, **kwargs):
         super(BookingForm, self).__init__(*args, **kwargs)

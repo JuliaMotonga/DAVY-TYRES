@@ -101,9 +101,6 @@ overflow:hidden
  z-index: +1;
 }
 
-
-
-
 /**soccial icons**/
 
 .social {
@@ -120,7 +117,7 @@ overflow:hidden
 }
 
 .social li a i {
-background: #000080;
+    background: #000080;
     color: #fff;
     width: 40px;
     height: 40px;
@@ -139,8 +136,6 @@ background: #000080;
 li:hover{
 text-decoration:underline;
 }
-
-
 
 /**login Form**/
 .login_form {
@@ -176,7 +171,6 @@ text-align:center;
     border-radius:3px;
 }
 
-
 .blog {
     background-color:#000080;
     color: yellow;
@@ -190,13 +184,9 @@ text-align:center;
     font-family: 'Baloo Tamma', cursive;
 }
 
-
 .container {
     padding: 16px;
 }
-
-
-
 
 /**booking form**/
  #booking_form{
@@ -237,6 +227,10 @@ border: 4px solid #000080;
 
 input:invalid{
 border: 1px solid red;
+}
+
+label[for=id_booking_time]{
+    display: none;
 }
 
 #booking_form textarea{
@@ -594,7 +588,6 @@ margin-bottom:40px;
 }
 
 .btn {
-
   -webkit-border-radius: 3;
   -moz-border-radius: 3;
   border-radius: 3px;

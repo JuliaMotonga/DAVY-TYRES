@@ -1,0 +1,14 @@
+{% load booking_extras %}
+{{ service_slots.time_slots }}
+
+<div id="service_slots">
+{% for service in service_slots %}
+    <div id="id-{{ service.name|slug }}" data-service="{{ service.id }}">
+        {% for slot in service.time_slots %}
+            <div id="id-{{ service.name|slug }}-{{forloop.counter}}" data-time="{{ slot.start|short_time_format }}" style="border: 1px solid; margin: 10px; width: 250px;">
+                {{ slot.start }} - {{ slot.end }}
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+</div>
