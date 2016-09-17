@@ -16,6 +16,7 @@ import os
 from os.path import normpath, join
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +30,7 @@ DEPLOY = True
 
 DEBUG = True if not DEPLOY else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['davy-tyres.herokuapp.com']
 
 AUTH_USER_MODEL = 'bookings.BaseUser'
 
@@ -62,11 +63,17 @@ SERVER_EMAIL = 'davytyrestest@gmail.com'
 EMAIL_HOST_USER = 'davytyrestest@gmail.com'
 EMAIL_ADMIN_USER = 'davytyrestest@gmail.com'
 EMAIL_HOST_PASSWORD = 'admin123!'
-PRODUCTION_DOMAIN = 'http://davy-tyres.herokuapp.com/'
-HOST_DOMAIN = 'localhost:8000' if not DEPLOY else PRODUCTION_DOMAIN
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets', )
+
+PRODUCTION_DOMAIN = 'http://davy-tyres.herokuapp.com/'
+
+HOST_DOMAIN = 'localhost:8000' if not DEPLOY else PRODUCTION_DOMAIN
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, 'static/')
+]
 
 STATIC_URL = '/static/'
 
