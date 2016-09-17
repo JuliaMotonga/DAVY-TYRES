@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <title>Header Davy Tyres </title>
-    <link href="{% static 'css/base.css' %}" type="text/css" rel="stylesheet"/>
+
     <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Open+Sans|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'fonts-font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/max480px.css' %}" media="screen and (max-device-width:480px)">
@@ -11,6 +11,7 @@
           media="screen and (min-width: 481px) and (max-device-width:1024px)">
     <link rel="stylesheet" href="{% static 'css/min1224px.css' %}"
           media="screen and (min-width: 1025px) and (max-device-width:1224px)">
+<link href="{% static 'css/base.css' %}" type="text/css" rel="stylesheet"/>
     <link rel='stylesheet' href="{% static 'bootstrap/css/bootstrap.min.css' %}" type='text/css'/>
     <script src="{% static 'admin/js/jquery-1.9.1.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
@@ -27,11 +28,11 @@
 <body>
 <div class="conatiner-fluid">
 <div class="row">
-    <aside class="header hidden-xs hidden-sm col-md-1"></aside>
-    <section class="header col-xs-12 col-sm-12 col-md-10">
+    <aside class=""></aside>
+    <section class="">
         {% include "header.html" %}
     </section>
-    <aside class="header hidden-xs hidden-sm col-md-1"></aside>
+    <aside class=""></aside>
         </div>
 </div>
 <div class="conatiner-fluid">

@@ -2,7 +2,7 @@
 
 {% block content %}
     {% load staticfiles %}
-    <div class="carouselHome col-md-offset-right-2 ">
+    <div class="carouselHome col-xs-9 col-xs-offset-3">
         <div class="gallery js-flickity" data-flickity='{ "autoPlay": 10000, "pauseAutoPlayOnHover": false }'>
             <div class="gallery-cell"><img src="{% static 'images/dulop xpres.jpg' %}"></div>
             <div class="gallery-cell"><img src="{% static 'images/Michelin2013WinterPromoAsset-640x244.jpg' %}"></div>
@@ -11,13 +11,14 @@
         </div>
     </div>
 
-    <div class="col-md-3 hidden-xs hidden-sm">
+    <div class="hidden-xs col-sm-3">
         {% include "catalogue/tyre-calculator.html" %}
     </div>
     <br>
     <br>
     <hr>
-    <div class="imgServiceIndex hidden-xs ">
+
+    <div class="imgServiceIndex">
         <div>All Type Of Tyres<img src="{% static 'images/servicesIndex/1416927181159620.jpg' %}">
             <div>
                 We can supply and fit the most suitable tyres for your vehicle no matter what you drive or what your
