@@ -1,21 +1,45 @@
 from binascii import hexlify, unhexlify
 from django.contrib import auth
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
 from bookings.forms import RegistrationForm
 from django.core.mail import send_mail
 
 from bookings.models import BaseUser
+from davyhome.forms import TyreForm
+from davyhome.models import Tyre
 from davytyres import settings
 
 
 def index(request):
     """Home page for Davy tyres"""
-    return render_to_response("test/index.html")
+    context = {}
+    tyre_form = TyreForm()
+    context['tyre_form'] = tyre_form
+    return render(request, "index.html", context)
 
 
-def test_view(request):
-    return render(request, "test/testview.html", {})
+def format_price_range(data):
+    if not data.get('price'):
+        return
+    data['price__min_price'], data['price__max_price'] = data.get('price', '').split('-')
+    data.pop('price', '')
+
+
+def tyre_search(request):
+    context, tyre_form = {}, TyreForm()
+
+    non_empty = {key: value for key, value in request.POST.iteritems() if value and key != 'csrfmiddlewaretoken'}
+    format_price_range(non_empty)
+    results = Tyre.objects.filter(**non_empty)
+    results_formatted = []
+    for obj in results:
+        results_formatted.append(dict((field.name, field.value_to_string(obj)) for field in obj._meta.fields))
+
+    context['tyre_results'] = results_formatted
+    context['tyre_form'] = tyre_form
+
+    return render(request, "catalogue/tyre-results.html", context)
 
 
 def about_us(request):
@@ -35,14 +59,6 @@ def catalogue(request):
                 }
                }
     return render(request, "test/catalogue.html", context)
-
-
-def unimplemented(request):
-    return render(request, "unimplemented.html")
-
-
-def about_us(request):
-    return render(request, "davytyres/about-us.html")
 
 
 def deals(request):

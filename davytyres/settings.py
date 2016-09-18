@@ -25,7 +25,6 @@ SECRET_KEY = 'vql#l=m47a**26bd$ybsr^b73_nqo(*dgh&vd+01(@vw99y2!b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEPLOY = True
 DEBUG = False if DEPLOY else True
-DEBUG = True
 MYSQL = False if DEPLOY else True
 ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'bookings.BaseUser'

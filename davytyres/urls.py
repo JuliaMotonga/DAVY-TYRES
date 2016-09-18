@@ -18,20 +18,21 @@ from django.contrib.auth import views as auth_views
 from bookings import views as booking_views
 from davyhome import views as basic_views
 from django.conf.urls import url
-
 from davyhome import views
 from davytyres import settings
 
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^admin/', admin.site.urls),
-    url(r'^sometest/', views.test_view, name='sometest'),
-    url(r'^catalogue/', views.catalogue),
     url(r'^activate/(?P<activation>\w+)/(?P<email>\w+)/$', views.activate),
-    url(r'unimplemented/', views.unimplemented),
     url(r'about-us', views.about_us),
     url(r'deals', views.deals)
 
+]
+
+catalogue = [
+    url(r'^catalogue/$', views.catalogue),
+    url(r'^catalogue/tyres/$', views.tyre_search),
 ]
 
 authentication = [
@@ -51,6 +52,8 @@ services = [
     url(r'^services/bookings/(?P<cancel>\w+)?/?$', booking_views.show_active_bookings),
 ]
 
-urlpatterns += authentication + services
-urlpatterns += [url(r'^static/(.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT})]
+static = [url(r'^static/(.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT})]
+
+urlpatterns += authentication + services + catalogue + static
+
 

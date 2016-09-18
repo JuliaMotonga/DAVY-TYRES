@@ -11,50 +11,53 @@ from davytyres import settings
 
 
 def service_detail(request):
-    context, errors, customer, form = {}, None, None, None
-    if request.method == 'POST':
-        print "user: {}".format(request.user)
-        if request.user:
-            try:
-                customer = BaseUser.objects.filter(id=request.user.id)[0]
-                print "customer: {}".format(customer)
-            except Exception as e:
-                pass
-            if customer:
-                form_data = dict(request.POST)
-                form_data = {item[0]: item[1][0] for item in form_data.iteritems()}
-                form_data['customer'] = customer.id
-                form = BookingForm(form_data)
-                form.fields['service_employee'].queryset = BaseUser.objects.filter(is_staff=True)
-                errors = form.submit()
-                print "errors: {}".format(errors)
-        if not customer:
-            print "There was no customer"
-            return redirect('/register/booking')
-        if not errors:
-            service = Service.objects.filter(id=form.data['service'])[0]
-            booking_time = form.data['booking_time']
-            email_body = " Hi {}, your booking for {} has been set for {} if you would like to cancel, please visit " \
-                         "https://{}/{}".format(customer.first_name, service.name, booking_time, settings.HOST_DOMAIN,
-                                               'services/bookings')
-            send_mail('Booking confirmation for {}.'.format(customer.first_name), email_body,
-                      'no_reply@davytyres.co.nz', [customer.email])
-            print "redirecting to booking confirmed"
-            return render(request, "services/booking-confirmed.html", form.cleaned_data)
-    else:
-        form = BookingForm()
-        form.fields['service_employee'].queryset = BaseUser.objects.filter(is_staff=True)
+    try:
+        context, errors, customer, form = {}, None, None, None
+        if request.method == 'POST':
+            print "user: {}".format(request.user)
+            if request.user:
+                try:
+                    customer = BaseUser.objects.filter(id=request.user.id)[0]
+                    print "customer: {}".format(customer)
+                except Exception as e:
+                    pass
+                if customer:
+                    form_data = dict(request.POST)
+                    form_data = {item[0]: item[1][0] for item in form_data.iteritems()}
+                    form_data['customer'] = customer.id
+                    form = BookingForm(form_data)
+                    form.fields['service_employee'].queryset = BaseUser.objects.filter(is_staff=True)
+                    errors = form.submit()
+                    print "errors: {}".format(errors)
+            if not customer:
+                print "There was no customer"
+                return redirect('/register/booking')
+            if not errors:
+                service = Service.objects.filter(id=form.data['service'])[0]
+                booking_time = form.data['booking_time']
+                email_body = " Hi {}, your booking for {} has been set for {} if you would like to cancel, please visit " \
+                             "https://{}/{}".format(customer.first_name, service.name, booking_time, settings.HOST_DOMAIN,
+                                                   'services/bookings')
+                send_mail('Booking confirmation for {}.'.format(customer.first_name), email_body,
+                          'no_reply@davytyres.co.nz', [customer.email])
+                print "redirecting to booking confirmed"
+                return render(request, "services/booking-confirmed.html", form.cleaned_data)
+        else:
+            form = BookingForm()
+            form.fields['service_employee'].queryset = BaseUser.objects.filter(is_staff=True)
 
-    services_struct = [{"name": service.name,
-                        "id": service.id,
-                        "time_slots": time_slots(service),
-                        "days_of_week": days_of_week(service)
-                        } for service in Service.objects.all()]
+        services_struct = [{"name": service.name,
+                            "id": service.id,
+                            "time_slots": time_slots(service),
+                            "days_of_week": days_of_week(service)
+                            } for service in Service.objects.all()]
 
-    context['service_slots'] = services_struct
-    context['services_calendar'] = json.dumps(services_struct, cls=DjangoJSONEncoder)
-    context['booking_form'] = form
-    return render(request, "services/service-details.html", context)
+        context['service_slots'] = services_struct
+        context['services_calendar'] = json.dumps(services_struct, cls=DjangoJSONEncoder)
+        context['booking_form'] = form
+        return render(request, "services/service-details.html", context)
+    except Exception as e:
+        print e
 
 
 def days_of_week(service):
