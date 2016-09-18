@@ -47,13 +47,17 @@ INSTALLED_APPS = [
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 SERVER_EMAIL = 'davytyrestest@gmail.com'
-EMAIL_HOST_USER = 'davytyrestest@gmail.com'
 EMAIL_ADMIN_USER = 'davytyrestest@gmail.com'
-EMAIL_HOST_PASSWORD = 'admin123!'
+EMAIL_HOST_USER = 'app56000687@heroku.com'
+# EMAIL_HOST_USER = 'davytyrestest@gmail.com'
+EMAIL_HOST_PASSWORD = '1xumowwy4222'
+# EMAIL_HOST_PASSWORD = 'admin123!'
+EMAIL_SENDGRID_KEY = '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'
 
 PRODUCTION_DOMAIN = 'http://davy-tyres.herokuapp.com/'
 # HOST_DOMAIN = 'localhost:8000' if not DEPLOY else PRODUCTION_DOMAIN
