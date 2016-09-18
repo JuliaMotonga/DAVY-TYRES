@@ -27,41 +27,14 @@ $(function() {
         minDate: '+1D'
     });
 
-    $('#id_booking_time').timepicker({
-        onHourShow: function(hour) {
-
-            //for (var service in cal) {
-            //    if (service_id == cal[service]['id']){
-            //        for (var day in cal[service]['availability']){
-            //            if (day == date.getUTCDay()){
-            //                var start = cal[service]['availability'][day]['start'],
-            //                end = cal[service]['availability'][day]['end'];
-            //            }
-            //        }
-            //    }
-            //}
-
-            var selectedDate = $('#id_booking_day').val();
-            $('#id_booking_day').val();
-        },
-        timeFormat: 'hh:mm tt',
-        interval: 60,
-        minTime: '8:00am',
-        maxTime: '6:00pm',
-        stepMinute: 30,
-        dynamic: true,
-        dropdown: true,
-        scrollbar: true
-    });
-
     var setupTimeSlots = function () {
         var $hiddenTimeField = $('#id_booking_time').parent().parent(),
             $slots = $('#service_slots div[data-time]');
 
         $slots.click(function (){
             var time = $(this).data('time');
-            $(this).css({'background-color': '#FFEEFF'})
-
+            $(this).css({'background-color': '#FFEEFF'});
+            $('#id_booking_time').val(time);
         });
         $('#service_slots').detach().appendTo($hiddenTimeField);
         $('div[data-service]').hide();

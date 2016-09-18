@@ -13,9 +13,11 @@ from davytyres import settings
 def service_detail(request):
     context, errors, customer, form = {}, None, None, None
     if request.method == 'POST':
+        print "user: {}".format(request.user)
         if request.user:
             try:
                 customer = BaseUser.objects.filter(id=request.user.id)[0]
+                print "customer: {}".format(customer)
             except Exception as e:
                 pass
             if customer:
@@ -25,7 +27,9 @@ def service_detail(request):
                 form = BookingForm(form_data)
                 form.fields['service_employee'].queryset = BaseUser.objects.filter(is_staff=True)
                 errors = form.submit()
+                print "errors: {}".format(errors)
         if not customer:
+            print "There was no customer"
             return redirect('/register/booking')
         if not errors:
             service = Service.objects.filter(id=form.data['service'])[0]
@@ -35,6 +39,7 @@ def service_detail(request):
                                                'services/bookings')
             send_mail('Booking confirmation for {}.'.format(customer.first_name), email_body,
                       'no_reply@davytyres.co.nz', [customer.email])
+            print "redirecting to booking confirmed"
             return render(request, "services/booking-confirmed.html", form.cleaned_data)
     else:
         form = BookingForm()
