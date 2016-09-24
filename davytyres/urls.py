@@ -43,6 +43,7 @@ authentication = [
     url(r'^logout/$', auth_views.logout),
     url(r'^register/$', basic_views.register),
     url(r'^register/(?P<redirect>\w+)?/?$', basic_views.register),
+    url(r'^inactive/$', views.inactive),
 ]
 
 services = [

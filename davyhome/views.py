@@ -70,12 +70,17 @@ def auth_view(request):
     password = request.POST.get('password')
     user = auth.authenticate(username=username, password=password)
     if user is not None:
+        if not user.is_active:
+            return HttpResponseRedirect('/inactive/')
         auth.login(request, user)
         return HttpResponseRedirect('/loggedin/')
     else:
         return HttpResponseRedirect('/logindenied/')
     # The login is authorised if its matches its value
 
+
+def inactive(request):
+    return render(request, 'registration/inactive.html')
 
 def register(request, redirect=None):
     context = {}
@@ -106,6 +111,8 @@ def activate(request, *args, **kwargs):
         email = unhexlify(kwargs['email'])
         user = BaseUser.objects.filter(email=email)[0]
         user.confirm_email(activation_key)
+        user.is_active = True
+        user.save()
     except Exception as e:
         return render(request, 'unimplemented.html')
     return render(request, 'registration/activated.html')

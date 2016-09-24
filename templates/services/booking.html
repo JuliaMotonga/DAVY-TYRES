@@ -24,8 +24,20 @@
             {% if field.label != 'Customer' %}
                 <div id="booking-{{ field.label }}" class="form-group">
                     <label class="col-xs-12 col-sm-4 col-md-4 control-label"  id = "label-form"> {{ field.label_tag }}</label>
-                  <div id = "booking-fields" class="booking-fields col-xs-12 col-sm-8 col-md-5">{{ field }}</div>
+                  <div id = "booking-fields" class="booking-fields col-xs-12 col-sm-8 col-md-5">
+                      {{ field }}
+                      {% if not field.name == "booking_time" %}
+                        {{field.errors}}
+                      {% endif %}
+                  </div>
                 </div>
+            {% endif %}
+            {% if field.errors %}
+            <script>
+                $(document).ready(function() {
+                    $('#id_' + '{{ field.name }}').css('border-color', 'red');
+                });
+            </script>
             {% endif %}
         {% endfor %}
         <input type="submit" value="Submit" class="booksub col-xs-12 col-sm-8 col-md-5 col-sm-offset-4 "/>
