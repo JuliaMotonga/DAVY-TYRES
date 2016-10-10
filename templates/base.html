@@ -2,8 +2,8 @@
 
 <html lang="en">
 <head>
-    <title>Header Davy Tyres </title>
-
+    <title>- DavyTyres</title>
+     <link rel="icon" href="{% static 'images/browserlogo.jpg'%}">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Open+Sans|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'fonts-font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/max480px.css' %}" media="screen and (max-device-width:480px)">
@@ -36,7 +36,7 @@
 </head>
 
 <body>
-<div class="conatiner-fluid">
+<div class="container-fluid">
 <div class="row">
     <aside class=""></aside>
     <section class="">
@@ -45,23 +45,23 @@
     <aside class=""></aside>
         </div>
 </div>
-<div class="conatiner-fluid">
+<div class="container-fluid">
     <div class="row">
         <aside class="hidden-xs hidden-sm col-md-1"></aside>
-        <section class="col-xs-12 col-sm-12 col-md-10 col-lg-10 " align="center">
+        <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
             {% block content %}
             {% endblock %}
         </section>
         <aside class="hidden-xs hidden-sm col-md-1"></aside>
     </div>
 </div>
-<div class="conatiner-fluid">
+<div class="container-fluid">
 <div class="row">
-    <aside class="footer hidden-xs hidden-sm col-md-1"></aside>
-    <section class="footer col-xs-12 col-sm-12 col-md-10">
+    <aside class="footer hidden-xs hidden-sm hidden-md col-lg-1"></aside>
+    <section class="footer col-xs-12 col-sm-12 col-md-12 col-lg-10">
         {% include "footer.html" %}
     </section>
-    <aside class="footer hidden-xs hidden-sm col-md-1"></aside>
+    <aside class="footer hidden-xs hidden-sm hidden-md col-lg-1"></aside>
 </div>
     </div>
 </body>

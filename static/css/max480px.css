@@ -81,6 +81,7 @@
         padding: 12px;
     }
 
+
     .login_form li {
         display: inline-block;
         color: #000033;
@@ -163,5 +164,10 @@
     .col-md-offset-right-2 {
         margin-left: 0px;
     }
+
+    .tyre-calculator{
+    dispaly:none;
+    }
+
 }
 

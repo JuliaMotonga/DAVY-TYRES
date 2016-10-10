@@ -2,7 +2,7 @@
 
 {% block content %}
     {% load staticfiles %}
-    <div class="carouselHome col-xs-9 col-xs-offset-3">
+    <div class="carouselHome col-xs-12 col-md-9 col-md-offset-3">
         <div class="gallery js-flickity" data-flickity='{ "autoPlay": 10000, "pauseAutoPlayOnHover": false }'>
             <div class="gallery-cell"><img src="{% static 'images/dulop xpres.jpg' %}"></div>
             <div class="gallery-cell"><img src="{% static 'images/Michelin2013WinterPromoAsset-640x244.jpg' %}"></div>
@@ -11,12 +11,11 @@
         </div>
     </div>
 
-    <div class="hidden-xs col-sm-3">
+    <div class="hidden-xs hidden-sm col-md-3">
         {% include "catalogue/tyre-calculator.html" %}
     </div>
     <br>
     <br>
-    <hr>
 
     <div class="imgServiceIndex">
         <div>All Type Of Tyres<img src="{% static 'images/servicesIndex/1416927181159620.jpg' %}">
@@ -35,13 +34,7 @@
                 but anything with rubber tyres – tractors, trailers, pay loaders, you name it – we can service it.
             </div>
         </div>
-        <div>Rims<img src="{% static 'images/servicesIndex/images.jpeg' %}">
-            <div>
-                Vehicle Compliance: All imported vehicles must comply with the strict regulations of New Zealand’s
-                vehicle import laws.
-                We are certified to carry out inspections and issue vehicle compliance for imported vehicles.
-            </div>
-        </div>
+
         <div>Shock Absorbers<img src="{% static 'images/servicesIndex/imagesshock.jpeg' %}">
             <div>
                 We can supply and fit all of the worlds leading brands of shock absorbers.

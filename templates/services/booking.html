@@ -9,13 +9,11 @@
 
 <style>
     label[for=id_booking_time]{
-        display: none;
-    }
+        display: none;}
 </style>
-
+<div class="background"><img src="{% static 'images/imageedit_16_6514087330.png' %}"></div>
 <div class="booking-form">
     <h1 text-align="center">Booking Form</h1>
-    <hr noshade size="5px">
     <script type="text/javascript">var servicesCalendar = "{{ services_calendar|escapejs }}";</script>
     <script src="{% static 'js/booking.js'%}"></script>
     <form action="/services/detail/" method="post" class="form-horizontal" id="booking_form">
