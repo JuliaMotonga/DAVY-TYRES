@@ -1,8 +1,10 @@
 body {
-margin : 0;
 font-family : 'Baloo Tamma', cursive;
 color : #000080;
 font-size : 17px;
+min-width:320px;
+text-align:center;
+margin: auto;
 }
 ul.topnav {
 list-style-type : none;
@@ -254,16 +256,21 @@ text-align : center;
 }
 .gallery-cell {
 min-width : 100%;
-max-height : 360px;
-border-radius : 5px;
+max-height : 400px;
+border-bottom-radius: 5px;
 }
 .carouselHome {
-margin-top : 10px;
+padding:0;
 }
 .gallery-cell img {
 min-width : 100%;
 max-height : 360px;
-border-radius : 5px;
+}
+.borderCarousel{
+background : #fafa00;
+background-image : linear-gradient(to bottom, #fafa00, #f4ff24);
+height:10px;
+width:100%;
 }
 .categories {
 padding-top : 40px;
@@ -337,7 +344,7 @@ border-radius : 3px;
 padding : 2px;
 }
 .tyre-calculator input[type="text"], select {
-width : 100%;
+width : 20%;
 padding : 12px 20px;
 margin : 8px 0;
 display : inline-block;
@@ -347,11 +354,11 @@ box-sizing : border-box;
 background-color : white;
 }
 .tyre-calculator input[type="submit"] {
-width : 100%;
-padding : 14px 20px;
+width : 20%;
+padding : 12px 20px;
+padding-bottom:7px;
 margin : 8px 0;
 border : none;
-cursor : pointer;
 background-color : #000080;
 color : yellow;
 cursor : pointer;
@@ -364,13 +371,12 @@ text-decoration : underline;
 }
 .tyre-calculator {
 border-radius : 5px;
-background : #f5f1ed;
-background-image : linear-gradient(to bottom, #f5f1ed, #b9b9ed);
+border :solid 1px #f5f1ed;
+border-color : linear-gradient(to bottom, #f5f1ed, #b9b9ed);
 padding : 20px;
-margin-top : -410px;
 }
 select.tyre-form-select {
-width : 100%;
+width : 20%;
 padding : 12px 20px;
 margin : 8px 0;
 display : inline-block;
@@ -381,6 +387,7 @@ background-color : white;
 }
 .calculator img {
 width : 100%;
+
 }
 ::-webkit-input-placeholder {
 color : #000033;
@@ -507,15 +514,47 @@ text-decoration : underline;
 z-index:-2;
 position:absolute;
 height:100%;
-opacity:0.2;
+opacity:0.3;
 left: 0;
 right: 0;
-width:40%;
+width:45%;
 overflow:none;
 }
 
-@media screen and (max-width:480px) {
-.background img{
-width:100%;
+.DavyTyresInfo{
+padding:35px;
+font-size : 18px;
+font-weight:200;
+color:#000033;
+
 }
+.DavyTyresInfo img{
+width:100%;
+height:50px;
+padding:0;
+
+}
+.davyOffer{
+padding:35px;
+font-size : 18px;
+font-weight:200;
+color:#000033;
+background : #000080;
+background-image : linear-gradient(to bottom, #000080, #1e446b);
+width:100%;
+padding:35px;
+color:white;
+}
+.davyOffer i{
+color:yellow;
+}
+.davyOffer li{
+text-decoration:none;
+}
+
+.store img{
+width:100%;
+margin:0;
+padding:0px;
+
 }

@@ -1,8 +1,9 @@
 {% load staticfiles %}
 <div class="tyre-calculator">
-    <div class="calculator"><img src="{% static 'images/tyres/u138.jpg' %}"></div>
+       <p>Make an enquiry online with us</p>
+    <div class="calculator" style="float:left;"><img src="{% static 'images/tyres/u138.jpg' %}"></div>
     <form method='POST' action="/catalogue/tyres/">{% csrf_token %}
         {{ tyre_form }}
-        <input value="SEARCH" type="submit">
+        <input value="SUBMIT" type="submit">
     </form>
 </div>

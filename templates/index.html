@@ -2,7 +2,7 @@
 
 {% block content %}
     {% load staticfiles %}
-    <div class="carouselHome col-xs-12 col-md-9 col-md-offset-3">
+    <div class="carouselHome">
         <div class="gallery js-flickity" data-flickity='{ "autoPlay": 10000, "pauseAutoPlayOnHover": false }'>
             <div class="gallery-cell"><img src="{% static 'images/dulop xpres.jpg' %}"></div>
             <div class="gallery-cell"><img src="{% static 'images/Michelin2013WinterPromoAsset-640x244.jpg' %}"></div>
@@ -10,51 +10,61 @@
             <div class="gallery-cell"><img src="{% static 'images/Michelin2013WinterPromoAsset-640x244.jpg' %}"></div>
         </div>
     </div>
-
-    <div class="hidden-xs hidden-sm col-md-3">
-        {% include "catalogue/tyre-calculator.html" %}
+<div class="borderCarousel"></div>
+<div>
+          <div class="davyOffer col-md-4" style="text-align:left;">
+              <h3>What we have to offer...</h3>
+         <ul>
+             <li>5 <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+             Service
+             </li>
+             <li>24/7 Mobile Truck Service</li>
+             <li>Extensive Tyre Selection</li>
+             <li>Car and Truck Alignments</li>
+             <li>Shock Shop</li>
+             <li>Wheel Balancing</li>
+             <li>Alloy Wheels</li>
+             <li>Competetive Prices</li>
+             <li>Friendly, Helpful staff</li>
+         </ul>
+        </div>
+<div class="DavyTyresInfo col-md-8"><h3 style="text-align:left;"> A little bit about us...</h3><p style="text-align:left;">Davy Tyres is a family owned and operated tyre shop in Henderson.
+                           Our compnay which prides itself in not only providing leading brand tyre products, but also having latest equipment and five star service.
+                           <br>Davy Tyres not only does cater for cars but bikes, wheelbarrows four-wheel drives, trucks no matter the size.
+                           <br>Recently we have updated our Davy Tyres website.
+    Now you can <a href="">register </a>with us, make a <a href="">booking online </a>and make an <a href="">online enquiry.</a></p>
+    <h3 style="text-align:left;">We are proud partners with...</h3>
+     <div class="col-xs-12">
+         <div class="row">
+        <aside class="col-xs-4"><img src="{% static 'images/imageedit_1_6032904453.png' %}"></aside>
+        <section class="col-xs-4"><img src="{% static 'images/Michelin.svg.png' %}"></section>
+        <aside class="col-xs-2"><img src="{% static 'images/shock-shop.gif.png' %}"></aside>
+             </div>
     </div>
-    <br>
-    <br>
-
-    <div class="imgServiceIndex">
-        <div>All Type Of Tyres<img src="{% static 'images/servicesIndex/1416927181159620.jpg' %}">
-            <div>
-                We can supply and fit the most suitable tyres for your vehicle no matter what you drive or what your
-                driving needs are.
-                Whether you drive the family people mover doing all those important jobs or a touring sedan,
-                classic car, or hi-performance machine, we have the tyres for you. We also have a good range
-                of secondhand tyres.
-            </div>
-        </div>
-        <div>Heavy Machinery<img src="{% static 'images/servicesIndex/FillWyI4MDAiLCI0MDAiXQ-image2.jpg' %}">
-            <div>We have a team of professional fleet service technicians with four fleet service trucks enabling us to
-                service a large area at anytime from Silverdale to Wiri.
-                Not only are truck fleets serviced,
-                but anything with rubber tyres – tractors, trailers, pay loaders, you name it – we can service it.
-            </div>
-        </div>
-
-        <div>Shock Absorbers<img src="{% static 'images/servicesIndex/imagesshock.jpeg' %}">
-            <div>
-                We can supply and fit all of the worlds leading brands of shock absorbers.
-                Servicing of the Billstein and Tein brands through our S
-                hocks Shop Suspension franchise is also available.
-            </div>
+    </div>
         </div>
     </div>
-    <br>
-    <hr>
+
+<div>
+
+    {% include "catalogue/tyre-calculator.html" %}
+</div>
 
     <h3 class="hidden-xs" style="text-align:center;">Our Henderson Store</h3>
-    <div class="imgDavy hidden-xs ">
-        <div><img src="{% static 'images/davyPhotos/IMG_1139.JPG' %}"></div>
-        <div><img src="{% static 'images/davyPhotos/IMG_1111.JPG' %}"></div>
-        <div><img src="{% static 'images/davyPhotos/IMG_1148.JPG' %}"></div>
-    </div>
+     <div class="store">
+         <div class="row">
+        <aside class="col-md-4"> <img src="{% static 'images/DSC_0106.JPG '%}"></aside>
+        <section class="col-md-4"><img src="{% static 'images/DSC_0113.JPG' %}"></section>
+        <aside class="col-md-4"><img src="{% static 'images/DSC_0108.JPG' %}"></aside>
+             </div>
+         </div>
     <br>
     <div class="review hidden-xs">
-        <hr>
+
         <h3 style="text-align:center;">Reviews</h3>
         <div></div>
         <hr>
