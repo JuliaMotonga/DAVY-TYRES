@@ -93,7 +93,7 @@ def show_active_bookings(request, cancel=None):
             if settings.DEPLOY:
                 email_body = "User {} has canceled booking #{}".format(user.email, booking.id)
                 send_mail('Booking confirmation for {}.'.format(user.first_name), email_body, 'no_reply@davytyres.co.nz',
-                          [settings.SERVER_EMAIL])
+                          [settings.EMAIL_USER])
         else:
             return HttpResponseForbidden()
         # context['canceled'] = 'booking #{} was cancelled.'.format(booking.id)
