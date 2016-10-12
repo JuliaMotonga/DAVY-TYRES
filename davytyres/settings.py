@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vql#l=m47a**26bd$ybsr^b73_nqo(*dgh&vd+01(@vw99y2!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEPLOY = False
+DEPLOY = True
 DEBUG = False if DEPLOY else True
 MYSQL = False if DEPLOY else True
 ALLOWED_HOSTS = ['*']
@@ -45,9 +45,9 @@ INSTALLED_APPS = [
     'simple_email_confirmation',
 ]
 
-SENDGRID_API_KEY = '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'
+# SENDGRID_API_KEY = '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'
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_USER = 'julia@davytyres.co.nz'
+EMAIL_USER = 'davytyrestest@gmail.com'
 EMAIL_HOST_USER = 'davystyres'
 EMAIL_HOST_PASSWORD = 'admin123!'
 EMAIL_USE_TLS = True

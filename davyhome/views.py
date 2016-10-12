@@ -132,3 +132,6 @@ def logindenied(request):
     context = {'failed_login': True}
     return render(request, "registration/failed_login.html", context)
 
+
+def contact_us(request):
+    return render(request, "davytyres/contact.html")
