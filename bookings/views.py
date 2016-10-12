@@ -87,12 +87,13 @@ def show_active_bookings(request, cancel=None):
 
     if cancel:
         booking = Booking.objects.filter(id=cancel)[0]
-        if booking.customer.id == request.user.id and booking.status[3] == 'C' and booking.status[4] == 'F':
-            booking.status = Booking.BOOKING_STATUS[3]
+        if booking.customer.id == request.user.id and booking.status == 'CF':
+            booking.status = Booking.BOOKING_STATUS[3][1]
             booking.save()
-            email_body = "User {} has canceled booking #{}".format(user.email, booking.id)
-            send_mail('Booking confirmation for {}.'.format(user.first_name), email_body, 'no_reply@davytyres.co.nz',
-                      [settings.EMAIL_ADMIN_USER])
+            if settings.DEPLOY:
+                email_body = "User {} has canceled booking #{}".format(user.email, booking.id)
+                send_mail('Booking confirmation for {}.'.format(user.first_name), email_body, 'no_reply@davytyres.co.nz',
+                          [settings.SERVER_EMAIL])
         else:
             return HttpResponseForbidden()
         # context['canceled'] = 'booking #{} was cancelled.'.format(booking.id)

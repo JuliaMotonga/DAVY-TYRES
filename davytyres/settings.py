@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vql#l=m47a**26bd$ybsr^b73_nqo(*dgh&vd+01(@vw99y2!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEPLOY = True
+DEPLOY = False
 DEBUG = False if DEPLOY else True
 MYSQL = False if DEPLOY else True
 ALLOWED_HOSTS = ['*']
@@ -51,7 +51,7 @@ EMAIL_HOST_PASSWORD = '4a531b36-5c66-4078-b781-c7aec7af34fc'  # From Postmark cr
 EMAIL_HOST_USER = '4a531b36-5c66-4078-b781-c7aec7af34fc'  # this is intentionally repeated
 EMAIL_PORT = '587'  # encrypted
 EMAIL_USE_TLS = True
-SERVER_EMAIL = 'Yvz4194@aut.ac.nz'
+SERVER_EMAIL = 'julia@davytyres.co.nz'
 POSTMARK_TEST_MODE = False if DEPLOY else True
 
 PRODUCTION_DOMAIN = 'http://davy-tyres.herokuapp.com/'

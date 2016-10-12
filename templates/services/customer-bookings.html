@@ -2,14 +2,15 @@
 
 {% block content %}
     {% for booking in bookings %}
-        <div >
-            <p>Date/Time:</p> <div class = "date">{{ booking.booking_time }}</div>
-            <p>Service:<p> <div id ="service_name">{{ booking }}</div>
+        <div>
+            <p>Status: {{ booking.status }}<p>
+            <p>Date/Time: <span class = "date">{{ booking.booking_time }}</span></p>
+            <p>Service: <span id ="service_name">{{ booking }}</span><p>
             <p>Service Employee: {{ booking.service_employee.username }}<p>
             <p>Vehicle Registration: {{ booking.registration_number }}</p>
             <p>Notes: {{ booking.additional_information }}<p>
         </div>
-        {% if booking.status.3 == 'C' and booking.status.4 == 'F' %}
+        {% if booking.status == 'CF' %}
         <form method="POST" action="/services/bookings/{{ booking.id }}">{% csrf_token %}
             <input type="hidden" value="{{booking.id}}">
             <input type="submit" value="Cancel this booking"> {# To-Do: wrap this with a time check #}
