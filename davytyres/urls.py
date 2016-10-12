@@ -25,8 +25,8 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^admin/', admin.site.urls),
     url(r'^activate/(?P<activation>\w+)/(?P<email>\w+)/$', views.activate),
-    url(r'about-us', views.about_us),
-    url(r'contact-us', views.contact_us),
+    url(r'^about-us$', views.about_us),
+    url(r'^contact-us$', views.contact_us),
     url(r'deals', views.deals)
 
 ]

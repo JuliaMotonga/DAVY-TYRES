@@ -2,6 +2,8 @@ from binascii import hexlify, unhexlify
 from django.contrib import auth
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+
 from bookings.forms import RegistrationForm
 from django.core.mail import send_mail
 
@@ -133,5 +135,12 @@ def logindenied(request):
     return render(request, "registration/failed_login.html", context)
 
 
+@csrf_exempt
 def contact_us(request):
-    return render(request, "davytyres/contact.html")
+    context = {}
+    if request.method == 'POST':
+        message = "Enquirey from {} about tyres: {}".format(request.POST.get(''), request.POST.get('comments'))
+        send_mail('tyre enquiry', message, 'enquireys@davytyres.co.nz', [settings.EMAIL_USER])
+        context['name'] = request.POST.get('first_name')
+        context['submitted'] = True
+    return render(request, "davytyres/contact.html", context)

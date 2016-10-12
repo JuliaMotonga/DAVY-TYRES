@@ -47,7 +47,7 @@ INSTALLED_APPS = [
 
 # SENDGRID_API_KEY = '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'
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_USER = 'davytyrestest@gmail.com'
+EMAIL_USER = 'davystyres@gmail.com'
 EMAIL_HOST_USER = 'davystyres'
 EMAIL_HOST_PASSWORD = 'admin123!'
 EMAIL_USE_TLS = True

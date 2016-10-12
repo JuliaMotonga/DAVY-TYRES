@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
 {%load staticfiles%}
 {% block content %}
-    some form will be here
+    {% if not submitted %}
+    <form action="/contact-us" method="post" id="enquiry">
+        <label for="first_name">First Name: </label><input name="first_name" id="first_name" type="text" /><br>
+        <label for="last_name">Last Name: </label><input name="last_name" id="last_name" type="text" /><br>
+        <label for="phone">Phone: </label><input name="phone" id="phone" type="text" /><br>
+        <label for="email">Email: </label><input name="email" id="email" type="text" /><br>
+        <label for="make">Vehicle make:</label><input name="make" id="make" type="text" /><br>
+        <label for="model">Vehicle model:</label><input name="model" id="model" type="text" /><br>
+        <label for="size">Current tyre size: </label><input name="size" id="size" type="text" /><br>
+        <label for="brand">Current tyre brand:</label><input name="brand" id="brand" type="text" /><br>
+        <label for="quantity">No. of tyres required:</label><input name="quantity" id="quantity" type="text" /><br>
+        <label for="comments">Comments: </label><textarea name="comments" id="comments" type="textarea" ></textarea><br>
+    </form>
+
+    <button type="submit" form="enquiry" value="Submit">Send email</button>
+    {% else %}
+        <p> thanks {{ name }} </p>
+    {% endif %}
 {% endblock %}
