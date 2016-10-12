@@ -110,6 +110,7 @@ http://flickity.metafizzy.co
   text-align: center;
   line-height: 1;
   position:absolute;
+  margin-top:20px;
 }
 
 .flickity-rtl .flickity-page-dots { direction: rtl; }

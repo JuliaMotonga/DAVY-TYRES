@@ -11,4 +11,6 @@ lib64
 *.pyc
 *.xml
 *.iml
+staticfiles/
+env/
 idea/
