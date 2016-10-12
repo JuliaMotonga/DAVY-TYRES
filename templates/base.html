@@ -2,8 +2,8 @@
 
 <html lang="en">
 <head>
-    <title>Header Davy Tyres </title>
-
+    <title>- DavyTyres</title>
+     <link rel="icon" href="{% static 'images/browserlogo.jpg'%}">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Open+Sans|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'fonts-font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/max480px.css' %}" media="screen and (max-device-width:480px)">
@@ -21,12 +21,22 @@
     <script src="{% static 'js/flickity.pkgd.min.js' %}"></script>
     <script src="{% static 'js/flickity.js' %}"></script>
     <link rel='stylesheet' href="{% static 'flickity-docs/flickity.css' %}" type='text/css'/>
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84817067-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
     {% block jqueryui %}{% endblock %}
     {% block datepickload %}{% endblock %}
 </head>
 
 <body>
-<div class="conatiner-fluid">
+<div class="container-fluid">
 <div class="row">
     <aside class=""></aside>
     <section class="">
@@ -35,22 +45,23 @@
     <aside class=""></aside>
         </div>
 </div>
-<div class="conatiner-fluid">
+<div class="container-fluid">
     <div class="row">
         <aside class="hidden-xs hidden-sm col-md-1"></aside>
-        <section class="col-xs-12 col-sm-12 col-md-10 col-lg-10 " align="center">
-            {% block content %}{% endblock %}
+        <section class="col-xs-12 col-sm-12 col-lg-10" align="center">
+            {% block content %}
+            {% endblock %}
         </section>
         <aside class="hidden-xs hidden-sm col-md-1"></aside>
     </div>
 </div>
-<div class="conatiner-fluid">
+<div class="container-fluid">
 <div class="row">
-    <aside class="footer hidden-xs hidden-sm col-md-1"></aside>
-    <section class="footer col-xs-12 col-sm-12 col-md-10">
+    <aside class=""></aside>
+    <section class="">
         {% include "footer.html" %}
     </section>
-    <aside class="footer hidden-xs hidden-sm col-md-1"></aside>
+    <aside class=""></aside>
 </div>
     </div>
 </body>

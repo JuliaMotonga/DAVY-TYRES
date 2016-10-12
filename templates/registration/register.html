@@ -1,18 +1,18 @@
-
+{% load staticfiles %}
 {% if redirected_from == 'booking' %}
     <div>
         Please register an account or sign in to continue booking.
     </div>
 {% endif %}
+<div class="background"><img src="{% static 'images/imageedit_16_6514087330.png' %}"></div>
 <div class="booking-form">
 <form action="/register/" method="post" class="form-horizontal" id="booking_form">
     <h1>Registration Form</h1>
-    <hr noshade size="5px">
     {% csrf_token %}
     {% for field in user_form %}
             <div id="register-{{ field.label }}" class="form-group" >
-            <label class=" control-label col-xs-12 col-sm-4 col-md-4 " > {{ field.label_tag }}</label>
-            <div class="col-xs-12 col-sm-8 col-md-5">
+            <label class=" control-label col-xs-6 col-sm-4 col-md-4 " > {{ field.label_tag }}</label>
+            <div class="col-xs-6 col-sm-8 col-md-5">
                 {{ field }}
                 {{field.errors}}
             </div>

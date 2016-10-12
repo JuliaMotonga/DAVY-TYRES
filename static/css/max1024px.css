@@ -82,22 +82,23 @@ font-size: 20px;
   margin-right: 20px;
 
 }
-.carouselHome{
-margin-top:20px;
-}
+
 /* full width cells by default */
 .gallery-cell img{
   width: 100%;
   height:250px;
   }
 
-.tyres{
-display:none;
-}
+
 .col-md-offset-right-2{
 margin-left:0px;
 }
 
+.tyre-calculator{
+    dispaly:none;
+    }
 
-
+.background img{
+    width:100%;
+    }
 }
