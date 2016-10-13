@@ -355,7 +355,7 @@ border-radius : 4px;
 box-sizing : border-box;
 background-color : white;
 }
-.tyre-calculator input[type="submit"] {
+.tyre-calculator input[type="submit"] , button[type="submit"]{
 width : 100%;
 padding : 12px 20px;
 padding-bottom:7px;
@@ -368,7 +368,7 @@ font-size : 17px;
 border-radius : 3px;
 font-family : 'Baloo Tamma', cursive;
 }
-.tyre-calculator input[type="submit"]:hover {
+.tyre-calculator  button[type="submit"]:hover, input[type="submit"]:hover {
 text-decoration : underline;
 }
 .tyre-calculator {
@@ -394,7 +394,9 @@ background-color : white;
 }
 .calculator img {
 width : 100%;
-
+}
+.tyre-calculator form label{
+display:none;
 }
 ::-webkit-input-placeholder {
 color : #000033;
@@ -581,5 +583,4 @@ font-family : 'Baloo Tamma', cursive;
 font-size:15px;
 font-weight:200;
 text-align:left;
-
 }

@@ -5,7 +5,27 @@
 <div class="container-fluid">
     <div class="row">
        <div class="hidden-xs hidden-sm col-md-3">
-            {%include "catalogue/tyre-calculator.html"%}
+                {% if not submitted %}
+<div class="tyre-calculator">
+    <p>Enquiry Form</p>
+    <div class="calculator"><img src="{% static 'images/tyres/u138.jpg' %}"></div>
+    <form action="/contact-us" method="post" id="enquiry">
+        <label for="first_name">First Name: </label><input name="first_name" id="first_name" type="text" placeholder="First name"/><br>
+        <label for="last_name">Last Name: </label><input name="last_name" id="last_name" type="text" placeholder="Last name"/><br>
+        <label for="phone">Phone: </label><input name="phone" id="phone" type="text" placeholder="Phone number"/><br>
+        <label for="email">Email: </label><input name="email" id="email" type="text" placeholder="Email Address"/><br>
+        <label for="make">Vehicle make:</label><input name="make" id="make" type="text" placeholder="Vehicle make"/><br>
+        <label for="model">Vehicle model:</label><input name="model" id="model" type="text"placeholder="Vehicle model" /><br>
+        <label for="size">Current tyre size: </label><input name="size" id="size" type="text" placeholder="Current tyre size"/><br>
+        <label for="brand">Current tyre brand:</label><input name="brand" id="brand" type="text" placeholder="Current tyre brand"/><br>
+        <label for="quantity">No. of tyres required:</label><input name="quantity" id="quantity" type="text" placeholder="No. of tyres req."/><br>
+        <label for="comments">Comments: </label><textarea name="comments" id="comments" type="textarea" placeholder="Comments"></textarea><br>
+    </form>
+    <button type="submit" form="enquiry" value="Submit">Send email</button>
+    {% else %}
+        <p> thanks {{ name }} </p>
+    {% endif %}
+    </div>
         </div>
     <div class="carouselHome col-xs-12 col-sm-12 col-md-9">
         <div class="gallery js-flickity" data-flickity='{ "autoPlay": 10000, "pauseAutoPlayOnHover": false }'>
