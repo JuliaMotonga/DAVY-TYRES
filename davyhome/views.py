@@ -140,7 +140,7 @@ def contact_us(request):
     context = {}
     if request.method == 'POST':
         message = "Enquirey from {} about tyres: {}".format(request.POST.get(''), request.POST.get('comments'))
-        send_mail('tyre enquiry', message, 'enquireys@davytyres.co.nz', [settings.EMAIL_USER])
+        send_mail('tyre enquiry', message, 'enquireys@davytyres.co.nz', [settings.EMAIL_HOST_USER])
         context['name'] = request.POST.get('first_name')
         context['submitted'] = True
     return render(request, "davytyres/contact.html", context)

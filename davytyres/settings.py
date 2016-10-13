@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vql#l=m47a**26bd$ybsr^b73_nqo(*dgh&vd+01(@vw99y2!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEPLOY = True
+DEPLOY = False
 DEBUG = False if DEPLOY else True
 MYSQL = False if DEPLOY else True
 ALLOWED_HOSTS = ['*']
@@ -45,16 +45,21 @@ INSTALLED_APPS = [
     'simple_email_confirmation',
 ]
 
-# SENDGRID_API_KEY = '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'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_USER = 'davystyres@gmail.com'
-EMAIL_HOST_USER = 'davystyres'
-EMAIL_HOST_PASSWORD = 'admin123!'
+#SENDGRID_API_KEY = 'peGX4C5LQ1uyXBmM6CxJNg'
+#EMAIL_HOST = 'smtp.sendgrid.net'
+#EMAIL_USER = 'davystyres@gmail.com'
+#EMAIL_HOST_USER = 'davystyres'
+#EMAIL_HOST_PASSWORD = 'admin123'
+#EMAIL_USE_TLS = True
+#EMAIL_PORT = '587'  # encrypted
 EMAIL_USE_TLS = True
-EMAIL_PORT = '587'  # encrypted
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'davystyres@gmail.com'
+EMAIL_HOST_PASSWORD = 'admin123!'
+EMAIL_PORT = 587
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-POSTMARK_TEST_MODE = False if DEPLOY else True
+#POSTMARK_TEST_MODE = False if DEPLOY else True
 
 PRODUCTION_DOMAIN = 'http://davy-tyres.herokuapp.com/'
 # HOST_DOMAIN = 'localhost:8000' if not DEPLOY else PRODUCTION_DOMAIN
