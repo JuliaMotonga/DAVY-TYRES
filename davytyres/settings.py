@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vql#l=m47a**26bd$ybsr^b73_nqo(*dgh&vd+01(@vw99y2!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEPLOY = False
+DEPLOY = True
 DEBUG = False if DEPLOY else True
 MYSQL = False if DEPLOY else True
 ALLOWED_HOSTS = ['*']
