@@ -19,7 +19,12 @@
     </form>
     <button type="submit" form="enquiry" value="Submit">Send email</button>
     {% else %}
+     <div class="davymessage">
         <p> thanks {{ name }} </p>
+         </div>
+    <a href="/login" class="btn" style="float:left;"> <i class="fa fa-backward fa-3x"  aria-hidden="true"></i> Back</a>
+
+    <a href="/"  class="btn" style="float:right;"> <i class="fa fa-home fa-3x" aria-hidden="true"></i> home</a>
     {% endif %}
     </div>
 {% endblock %}

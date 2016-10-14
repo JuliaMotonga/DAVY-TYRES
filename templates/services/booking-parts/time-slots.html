@@ -1,7 +1,7 @@
 {% load booking_extras %}
 {{ service_slots.time_slots }}
 
-<div id="service_slots">
+<div id="service_slots"class="col-md-offset-4">
 {% for service in service_slots %}
     <div id="id-{{ service.name|slug }}" data-service="{{ service.id }}">
         {% for slot in service.time_slots %}
