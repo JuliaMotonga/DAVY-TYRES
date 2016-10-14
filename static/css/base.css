@@ -539,8 +539,8 @@ border:none;
 margin:0;
 }
 .davyOffer{
-padding:35px;
-font-size : 14px;
+padding:15px;
+font-size : 18px;
 font-weight:200;
 color:#000033;
 background : #000080;
@@ -549,6 +549,7 @@ width:100%;
 color:white;
 border-radius:5px;
 margin-top:20px;
+
 }
 .davyOffer i{
 color:yellow;
