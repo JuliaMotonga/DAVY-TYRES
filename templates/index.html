@@ -4,7 +4,7 @@
     {% load staticfiles %}
 <div class="container-fluid">
     <div class="row">
-       <div class="hidden-xs hidden-sm col-md-3">
+       <div class="hidden-xs hidden-sm col-md-3"style = "padding-left:0!important;" >
                 {% if not submitted %}
 <div class="tyre-calculator">
     <p>Enquiry Form</p>
@@ -27,7 +27,7 @@
     {% endif %}
     </div>
         </div>
-    <div class="carouselHome col-xs-12 col-sm-12 col-md-9">
+    <div class="carouselHome col-xs-12 col-sm-12 col-md-9" style = "padding-right:0!important;">
         <div class="gallery js-flickity" data-flickity='{ "autoPlay": 10000, "pauseAutoPlayOnHover": false }'>
             <div class="gallery-cell"><img src="{% static 'images/dulop xpres.jpg' %}"></div>
             <div class="gallery-cell"><img src="{% static 'images/Michelin2013WinterPromoAsset-640x244.jpg' %}"></div>
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-<div class="DavyTyresInfo col-md-9"><h3 style="text-align:left;"> A little bit about us...</h3><p style="text-align:left;">Davy Tyres is a family owned and operated tyre shop in Henderson.
+<div class="DavyTyresInfo col-md-9" style = "padding-right:0!important;"><h3 style="text-align:left;"> A little bit about us...</h3><p style="text-align:left;">Davy Tyres is a family owned and operated tyre shop in Henderson.
                            Our compnay which prides itself in not only providing leading brand tyre products, but also having latest equipment and five star service.
                            <br>Davy Tyres not only does cater for cars but bikes, wheelbarrows, four-wheel drives, trucks no matter the size.
                            <br>Recently we have updated our Davy Tyres website.
@@ -63,10 +63,9 @@
 </div>
 <div class="container-fluid">
 <div class="row">
-
 <div class="service_index">
-
-    <div class="col-md-4 col-lg-4"><img src="{% static 'images/servicesIndex/1416927181159620.jpg' %}">
+    <div class="col-md-4 col-lg-4"><h4>ALL TYPE OF TYRES</h4>
+        <img src="{% static 'images/servicesIndex/1416927181159620.jpg' %}">
         <div>
            <p> We can supply and fit the most suitable tyres for your vehicle no matter what you drive or what your
             driving needs are.
@@ -75,14 +74,16 @@
             of secondhand tyres.</p>
         </div>
     </div>
-    <div class="col-md-4 col-lg-4"><img src="{% static 'images/slide1.png' %}">
+    <div class="col-md-4 col-lg-4"><h4>HEAVY MACHINERY</h4>
+        <img src="{% static 'images/slide1.png' %}">
         <div>We have a team of professional fleet service technicians with four fleet service trucks enabling us to
             service a large area at anytime from Silverdale to Wiri.
             Not only are truck fleets serviced,
             but anything with rubber tyres – tractors, trailers, pay loaders, you name it – we can service it.
         </div>
     </div>
-    <div class="col-md-4 col-lg-4"><img src="{% static 'images/CV_group_picture_web.png' %}">
+    <div class="col-md-4 col-lg-4"><h4>SHOCK SHOP</h4>
+        <img src="{% static 'images/CV_group_picture_web.png' %}">
         <div>
             We can supply and fit all of the worlds leading brands of shock absorbers.
             Servicing of the Billstein and Tein brands through our S
@@ -99,7 +100,7 @@
 
 
      <div class="store">
-          <h3 class="hidden-xs" style="text-align:center;">Our Henderson Store</h3>
+       <hr> <h3 class="hidden-xs" style="text-align:center;">Our Henderson Store</h3><hr>
          <div class="row">
         <aside class="col-md-4"> <img src="{% static 'images/DSC_0106.JPG '%}"></aside>
         <section class="col-md-4"><img src="{% static 'images/DSC_0113.JPG' %}"></section>
