@@ -66,6 +66,10 @@ def catalogue(request):
 def deals(request):
     return render(request, "davytyres/deals.html")
 
+def tyre_categories(request):
+   return render(request, "catalogue/tyre-categories.html", {})
+
+
 def shock_shop(request):
     return render(request, "davytyres/shock-shop.html")
 

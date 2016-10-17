@@ -2,8 +2,9 @@
 
 {% block content %}
 {%load staticfiles%}
-<div class="container-fluid">
+<div class="container-fluid" style="padding-bottom:40px;">
     <div class="row">
+        <div class="col-md-8">
 <h3 class =""style="text-align:left;">
 Shock Absorbers</h3>
 <hr>
@@ -14,7 +15,10 @@ Shock Absorbers</h3>
 <h4 style="text-align:left;"><b>Suspension Parts</b></h4>
 <p style="text-align:left;" >We can cater to your vehicles needs for either basic WOF repairs as well as performance upgrades with our full<br>
         range of Bush/Coil Springs/Sway bars and general parts replacement as well as<br>
-        performing a customised wheel alignment to your vehicle as the last finishing touch.</p>
+        performing a customised wheel alignment to your vehicle as the last finishing touch.</p></div>
+
+        <div class="col-md-4 hidden-xs hidden-sm"><img src="{% static 'images/services/ShockShopLogos150.png'%}" style="padding-top:20px"></div>
 </div>
     </div>
+
 {% endblock %}

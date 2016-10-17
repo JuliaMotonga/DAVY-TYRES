@@ -130,9 +130,7 @@ margin-left : 20px;
 }
 @media screen and (max-width:768px) {
 .brand-box div, i, a {
-font-size : 40px;
 margin:0px;
-font-weight:200;
 }
 
 }
@@ -301,8 +299,9 @@ border-radius: 5px;
 padding-top : 40px;
 }
 .thumbnailC img {
-max-width : 100%;
-border-radius : 3px;
+width : 100%;
+ border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 color : #000033;
 height:250px;
 overflow:hidden;
@@ -327,6 +326,7 @@ transition : border 0.2s ease-in-out;
 margin-right : -5px;
 padding : 0;
 margin-top:20px;
+max-width:100%;
 }
 .thumbnailC > img, .thumbnailC a > img {
 margin-right : auto;
@@ -341,7 +341,8 @@ color : #000080;
 font-family : 'Baloo Tamma', cursive;
 background : #fafa00;
 background-image : linear-gradient(to bottom, #fafa00, #f4ff24);
-border-radius : 7px;
+ border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 text-align : center;
 width:auto;
 }

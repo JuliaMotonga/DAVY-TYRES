@@ -23,7 +23,12 @@
     </form>
     <button type="submit" form="enquiry" value="Submit">Send email</button>
     {% else %}
-        <p> thank we will contact you as ap {{ name }} </p>
+        <div class="davymessage">
+        <p> thank you {{ name }}. We will come back to you as ap </p>
+         </div>
+    <a href="/login" class="btn" style="float:left;"> <i class="fa fa-backward fa-3x"  aria-hidden="true"></i> Back</a>
+
+    <a href="/"  class="btn" style="float:right;"> <i class="fa fa-home fa-3x" aria-hidden="true"></i> home</a>
     {% endif %}
     </div>
         </div>

@@ -2,7 +2,11 @@
 {%load staticfiles%}
 {% block content %}
     {% if not submitted %}
-<div class="tyre-calculator col-md-6">
+<div class="container-fluid" style="padding-bottom:40px;">
+    <div class="row">
+<h3 class =""style="text-align:left;">
+Contact us</h3><hr>
+<div class="tyre-calculator col-md-4">
     <h3>Make an enquiry now</h3>
     <div class="calculator"><img src="{% static 'images/tyres/u138.jpg' %}"></div>
     <form action="/contact-us" method="post" id="enquiry">
@@ -20,11 +24,21 @@
     <button type="submit" form="enquiry" value="Submit">Send email</button>
     {% else %}
      <div class="davymessage">
-        <p> thanks {{ name }} </p>
+        <p> thank {{ name }}. We will come back to you as ap </p>
          </div>
     <a href="/login" class="btn" style="float:left;"> <i class="fa fa-backward fa-3x"  aria-hidden="true"></i> Back</a>
 
     <a href="/"  class="btn" style="float:right;"> <i class="fa fa-home fa-3x" aria-hidden="true"></i> home</a>
     {% endif %}
     </div>
+        <div class="headerAddress col-xs-6" style="margin-top:5px; color:black;">
+        131 Central Park Drive
+        <br>Cnr Winstone Place, Henderson,0610
+        <br><a href="tel:+64-9-836-6943"><i class="fa fa-phone-square" aria-hidden="true"></i>Phone
+        09-836-69435</a>
+       <br> <a href="tel:+021-9-836-6943"><i class="fa fa-phone-square" aria-hidden="true"></i>After Hours
+        09-836-69435</a>
+</div>
+            </div>
+        </div>
 {% endblock %}

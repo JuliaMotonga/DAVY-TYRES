@@ -35,6 +35,7 @@ urlpatterns = [
 catalogue = [
     url(r'^catalogue/$', views.catalogue),
     url(r'^catalogue/tyres/$', views.tyre_search),
+    url(r'^catalogue/tyre-categories/$', views.tyre_categories),
 ]
 
 authentication = [
