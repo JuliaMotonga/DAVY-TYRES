@@ -83,7 +83,7 @@ width : 100%;
 font-size : 25px;
 overflow : hidden;
 color : yellow;
-height : 135espx;
+height : 135px;
 }
 .brand-box div {
 color : white;
@@ -102,7 +102,7 @@ border:none;
 margin:0 !important;
 opacity:0.2;
 max-height:135px;
-min-height:135;
+min-height:135px;
 }
 
 .logoShock img{
