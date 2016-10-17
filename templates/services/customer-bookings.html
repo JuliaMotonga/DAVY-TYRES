@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="customer_bookings">
+
     <h3 style="text-align:center;"> {{ request.user.first_name }} Booking history</h3>
     {% for booking in bookings %}
         <div class="row" style="margin-left:40px;">
-            <div class="col-xs-12" >
+            <div class="col-xs-12 customer_bookings" >
             <p>Status: {{ booking.status }}<p>
             <p>Date/Time: <div class = "date">{{ booking.booking_time }}</div></p>
             <p>Service:<div id ="service_name">{{ booking }}</div></p>
@@ -20,7 +20,6 @@
         </form>
         {% endif %}
     </div>
-<br><hr><br>
+<br>
     {% endfor %}
-</div>
 {% endblock %}

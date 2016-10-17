@@ -189,7 +189,7 @@ width : 100%;
 text-align : center;
 }
 .login_form input[type="text"], input[type="password"] {
-width : 100%;
+width  : 100%;
 padding : 12px;
 margin : 8px 0;
 display : inline-block;
@@ -204,7 +204,7 @@ padding : 12px;
 margin : 8px 0;
 border : none;
 cursor : pointer;
-width : 100%;
+max-width  : 100%;
 font-size : 17px;
 border-radius : 3px;
 font-family : 'Baloo Tamma', cursive;
@@ -230,7 +230,7 @@ border-radius : 3px;
 box-sizing : border-box;
 }
 #booking_form select, textarea {
-width : 100%;
+width  : 100%;
 padding : 8px;
 display : inline-block;
 border : #ccc solid 2px;
@@ -248,7 +248,8 @@ height : 80px;
 background-color : #000080;
 color : yellow;
 padding : 12px 20px;
-margin : 4px 0;
+margin: 4px;
+margin:px;
 border : none;
 cursor : pointer;
 font-size : 17px;
@@ -267,7 +268,7 @@ display : inline-block;
 color : #000033;
 margin : 8px 0;
 padding : 12px;
-width : 100%;
+width  : 100%;
 text-align : center;
 }
 .gallery-cell {
@@ -573,7 +574,7 @@ width:100%;
 
 .service_index img{
 max-width:80%;
-height:25%;
+height:20%;
 margin-top:40px;
 }
 
@@ -588,11 +589,16 @@ font-weight:500;
 
 .customer_bookings {
 color : #000080;
-color-image : linear-gradient(to bottom, #000080, #1e446b);
-font-family : 'Baloo Tamma', cursive;
+border:solid 1px lightgrey;
+padding:20px;
 font-size:15px;
-font-weight:200;
 text-align:left;
+ background: #f0f0f0;
+  background-image: -webkit-linear-gradient(top, #f0f0f0, #d1d1e3);
+  background-image: -moz-linear-gradient(top, #f0f0f0, #d1d1e3);
+  background-image: -ms-linear-gradient(top, #f0f0f0, #d1d1e3);
+  background-image: -o-linear-gradient(top, #f0f0f0, #d1d1e3);
+  background-image: linear-gradient(to bottom, #f0f0f0, #d1d1e3);
 }
 
 .heading{
@@ -604,16 +610,75 @@ color: yellow;
 
 }
 
-.service_index hr{
-    height: 12px;
-    border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
-}
-.store hr{
-height: 12px;
-border: 0;
-box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
-}
 .logo{
 
 }
+
+#ui-datepicker-div {
+ background: #f0f0f0;
+  background-image: -webkit-linear-gradient(top, #f0f0f0, #d1d1e3);
+  background-image: -moz-linear-gradient(top, #f0f0f0, #d1d1e3);
+  background-image: -ms-linear-gradient(top, #f0f0f0, #d1d1e3);
+  background-image: -o-linear-gradient(top, #f0f0f0, #d1d1e3);
+  background-image: linear-gradient(to bottom, #f0f0f0, #d1d1e3);
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: 1px solid #000080;
+	background: yellow !important;
+	font-weight: normal;
+	color: #000080;
+}
+
+.ui-widget-header {
+	border: 1px solid #dddddd;
+	background: #fff832 !important;
+	color: #000080 !important;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #000080 !important;
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+
+/* We use html here because we need a greater specificity to make sure disabled
+works properly when clicked or hovered */
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+	border: 1px solid #000080 !important;
+	font-weight: normal;
+	color: #000080 !important;
+}
+
+ #service_slots div div {
+border-radius:5px;
+color: white;
+background:green;
+font-weight:200;
+}
+
+ #service_slots div div:active,
+ #service_slots div div:focus,
+ #service_slots div div:visited
+  {
+border-radius:5px;
+color:white;
+background:red;
+font-weight:200;
+}
+
+ #service_slots div div:hover{
+ background:lightgreen;
+
+ }

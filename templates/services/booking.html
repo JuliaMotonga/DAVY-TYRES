@@ -20,8 +20,8 @@
         {% for field in booking_form %}
             {% if field.label != 'Customer' %}
                 <div id="booking-{{ field.label }}" class="form-group">
-                    <label class="col-xs-12 col-sm-4 col-md-4 control-label"  id = "label-form"> {{ field.label_tag }}</label>
-                  <div id = "booking-fields" class="booking-fields col-xs-12 col-sm-8 col-md-5">
+                    <label class="col-xs-4 col-sm-4 col-md-4 control-label" id = "label-form"> {{ field.label_tag }}</label>
+                  <div id = "booking-fields" class="booking-fields col-xs-5 col-sm-5 col-md-5">
                       {{ field }}
                       {% if not field.name == "booking_time" %}
                         {{field.errors}}
@@ -37,7 +37,7 @@
             </script>
             {% endif %}
         {% endfor %}
-        <input type="submit" value="Submit" class="booksub col-xs-12 col-sm-8 col-md-5 col-sm-offset-4 "/>
+        <input type="submit" value="Submit" class="booksub col-xs-5 col-sm-5 col-md-5 col-xs-offset-4 "/>
        <div text-align="center">
         <ul>
         <li>New Customer! <a href="/register/">Register</a></li>
