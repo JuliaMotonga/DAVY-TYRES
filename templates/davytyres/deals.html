@@ -2,8 +2,10 @@
 
 {% block content %}
   {%load staticfiles%}
-<div class="imgServiceIndex">
-        <div>Lorem ipsum<img src="{% static 'images/deals/Michelin_Fall70_PromoPage_700x390_EN.jpg' %}">
+<div class="container-fluid">
+    <div class="row">
+<div class="sales">
+        <div class="col-md-4"><h4>Lorem ipsum</h4><img src="{% static 'images/deals/Michelin_Fall70_PromoPage_700x390_EN.jpg' %}">
             <div>
               Lorem ipsum dolor sit amet, potenti sed id suspendisse proin,
                 praesent nulla leo amet. At pretium nisl velit magna,
@@ -11,7 +13,7 @@
                 tristique purus vestibulum eu lectus.
             </div>
         </div>
-        <div>Lorem ipsum<img src="{% static 'images/deals/index.jpeg' %}">
+        <div class="col-md-4"><h4>Lorem ipsum</h4><img src="{% static 'images/deals/index.jpeg' %}">
             <div>
                 Lorem ipsum dolor sit amet, potenti sed id suspendisse proin,
                 praesent nulla leo amet. At pretium nisl velit magna,
@@ -19,7 +21,7 @@
                 tristique purus vestibulum eu lectus.
             </div>
         </div>
-        <div>Lorem ipsum<img src="{% static 'images/deals/imagsaes.jpeg' %}">
+        <div class="col-md-4"><h4>Lorem ipsum</h4><img src="{% static 'images/deals/imagsaes.jpeg' %}" >
             <div>
                Lorem ipsum dolor sit amet, potenti sed id suspendisse proin,
                 praesent nulla leo amet. At pretium nisl velit magna,
@@ -28,16 +30,20 @@
             </div>
         </div>
     </div>
-<div class="imgServiceIndex">
-           <div>Lorem ipsum<img src="{% static 'images/deals/564.jpeg' %}">
-            <div>
+        </div>
+    </div>
+<div class="container-fluid">
+    <div class="row">
+<div class="sales">
+           <div class="col-md-4" ><h4>Lorem ipsum</h4><img src="{% static 'images/deals/564.jpeg' %}">
+            <div >
                Lorem ipsum dolor sit amet, potenti sed id suspendisse proin,
                 praesent nulla leo amet. At pretium nisl velit magna,
                 vestibulum cras cursus et elit. Ante pellentesque volutpat venenatis mauris,
                 tristique purus vestibulum eu lectus.
             </div>
         </div>
-        <div>Lorem ipsum<img src="{% static 'images/deals/3655718.attach.jpeg' %}">
+        <div class="col-md-4"><h4>Lorem ipsum</h4><img src="{% static 'images/deals/3655718.attach.jpeg' %}">
             <div>
                  Lorem ipsum dolor sit amet, potenti sed id suspendisse proin,
                 praesent nulla leo amet. At pretium nisl velit magna,
@@ -45,7 +51,7 @@
                 Ante pellentesque volutpat venenatis mauris, tristique purus vestibulum eu lectus.
             </div>
         </div>
-        <div>Lorem ipsum<img src="{% static 'images/deals/imagfdfes.jpeg' %}">
+        <div class="col-md-4"><h4>Lorem ipsum</h4><img src="{% static 'images/deals/imagfdfes.jpeg' %}">
             <div>
                Lorem ipsum dolor sit amet, potenti sed id suspendisse proin,
                 praesent nulla leo amet. At pretium nisl velit magna,
@@ -54,5 +60,7 @@
             </div>
         </div>
 
+    </div>
+        </div>
     </div>
 {% endblock %}

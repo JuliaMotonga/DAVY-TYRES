@@ -45,7 +45,7 @@ def tyre_search(request):
 
 
 def about_us(request):
-    return render(request, "davytyres/about-us.html", {})
+    return render(request, "davytyres/about-us.html",{})
 
 
 def catalogue(request):
@@ -66,6 +66,8 @@ def catalogue(request):
 def deals(request):
     return render(request, "davytyres/deals.html")
 
+def shock_shop(request):
+    return render(request, "davytyres/shock-shop.html")
 
 def auth_view(request):
     username = request.POST.get('username')

@@ -96,7 +96,7 @@ font-weight : 200;
 .headerAddress a{
 color:white;
 }
-.brandback{
+.brandback img{
 position:absolute;
 padding:0;
 left:0;
@@ -106,13 +106,14 @@ margin:0 !important;
 opacity:0.2;
 max-height:135px;
 min-height:135px;
+max-width:100%;
 }
 
 .logoShock img{
 opacity:0.9;
 margin-top:5px;
 margin-left:75px;
- max-height:155px;
+ max-height:120px;
 }
 .headerAddress i:hover {
 color : yellow;
@@ -131,7 +132,7 @@ margin-left : 20px;
 .brand-box div, i, a {
 font-size : 40px;
 margin:0px;
-font-weight:400px;
+font-weight:200;
 }
 
 }
@@ -208,6 +209,7 @@ max-width  : 100%;
 font-size : 17px;
 border-radius : 3px;
 font-family : 'Baloo Tamma', cursive;
+width:100%;
 }
 .container {
 padding : 16px;
@@ -215,9 +217,11 @@ padding : 16px;
 #booking_form {
 border : none;
 padding : 10px;
+padding-left:0px;
+padding-right:0px;
 margin-top : 10px;
 color : #000033;
-font-size : 14px;
+font-size : 20px;
 font-family : 'Open Sans', sans-serif;
 }
 #booking_form input[type="text"], input[type="password"], input[type="email"] {
@@ -225,8 +229,10 @@ width : 100%;
 padding : 8px;
 display : inline-block;
 border : #ccc solid 2px;
-font-size : 14px;
+font-size : 20px;
 border-radius : 3px;
+padding-left:0px;
+padding-right:0px;
 box-sizing : border-box;
 }
 #booking_form select, textarea {
@@ -235,8 +241,10 @@ padding : 8px;
 display : inline-block;
 border : #ccc solid 2px;
 box-sizing : border-box;
-font-size : 14px;
+font-size : 20px;
 border-radius : 3px;
+padding-left:0px;
+padding-right:0px;
 }
 form:focus {
 border : #000080 solid 4px;
@@ -271,6 +279,9 @@ padding : 12px;
 width  : 100%;
 text-align : center;
 }
+
+
+
 .gallery-cell {
 min-width : 100%;
 height : 360px;
@@ -680,5 +691,13 @@ font-weight:200;
 
  #service_slots div div:hover{
  background:lightgreen;
-
  }
+
+ .sales{
+ padding-top:30px;
+ width:100%;
+ }
+
+.sales img{
+max-width:100%
+}

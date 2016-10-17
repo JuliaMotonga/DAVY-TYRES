@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
 {%load staticfiles%}
 {% block content %}
+<div class="container-fluid">
+    <div class="row">
 <h3 class =""style="text-align:left;">About Us</h3>
 <hr>
-<div class="about-us">
+<div class="about-us col-md-4">
   <div style="width:25%;" class=" hidden-xs hidden-sm"><img src= "{%static 'images/davyPhotos/IMG_1139.JPG'%}">
      <img src= "{%static 'images/services/WheelAlignment.jpg'%}">
   </div>
-<div>
+    </div>
+<div class="col-md-8">
     <p style="text-align:left;font-weight:400px;"><b>Family Business</b></p>
    <p style="text-align:left;" id="pabout-us">
    Davy Tyres is a family owned and operated tyre shop in the bustling area of Central Park Drive in Henderson, Waitakere City.
@@ -37,7 +40,8 @@ Don’t forget to check out our latest specials.
    </p>
 </div>
 </div>
-
+</div>
+    </div>
 
 
 {% endblock %}
