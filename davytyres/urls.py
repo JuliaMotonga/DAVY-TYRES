@@ -22,7 +22,7 @@ from davyhome import views
 from davytyres import settings
 
 urlpatterns = [
-    url(r'^$', views.index),
+    url(r'^$', views.index, name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^activate/(?P<activation>\w+)/(?P<email>\w+)/$', views.activate),
     url(r'about-us', views.about_us),
@@ -43,7 +43,7 @@ authentication = [
     url(r'^authview/$', views.auth_view),
     url(r'^loggedin/$', views.loggedin),
     url(r'^login/$', auth_views.login),
-    url(r'^logout/$', auth_views.logout),
+    url(r'^logout/$', views.logout_view),
     url(r'^register/$', basic_views.register),
     url(r'^register/(?P<redirect>\w+)?/?$', basic_views.register),
     url(r'^inactive/$', views.inactive),

@@ -1,7 +1,9 @@
 from binascii import hexlify, unhexlify
 from django.contrib import auth
+from django.contrib.auth import logout
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
 from bookings.forms import RegistrationForm
@@ -129,6 +131,11 @@ def activate(request, *args, **kwargs):
 def login(request):
     context = {}
     return render(request, 'login.html', context)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect(reverse('home'))
 
 
 def loggedin(request):
