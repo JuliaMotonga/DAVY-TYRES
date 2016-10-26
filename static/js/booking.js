@@ -33,7 +33,8 @@ $(function() {
 
         $slots.click(function (){
             var time = $(this).data('time');
-            $(this).css({'background-color': '#FFEEFF'});
+            $(this).css({'background-color': '#000000'});
+            $(this).siblings().css({'background-color': '#008000'});
             $('#id_booking_time').val(time);
         });
         $('#service_slots').detach().appendTo($hiddenTimeField);
@@ -48,8 +49,13 @@ $(function() {
             console.log($('div[data-service=service_id]'));
             $('div[data-service='+service_id+']').show();
         }
-    })
+    });
 
+    $('#id_service').change(function(){
+        $('#service_slots').children().hide();
+        setupTimeSlots();
+        $('#id_booking_day').trigger('change');
+    });
 });
 
 
