@@ -68,12 +68,25 @@ def catalogue(request):
 def deals(request):
     return render(request, "davytyres/deals.html")
 
+
 def tyre_categories(request):
-   return render(request, "catalogue/tyre-categories.html", {})
+    context, tyre_form = {}, TyreForm()
+
+    non_empty = {key: value for key, value in request.POST.iteritems() if value and key != 'csrfmiddlewaretoken'}
+    format_price_range(non_empty)
+    results = Tyre.objects.filter(**non_empty)
+    results_formatted = []
+    for obj in results:
+        results_formatted.append(dict((field.name, field.value_to_string(obj)) for field in obj._meta.fields))
+
+    context['tyre_results'] = results_formatted
+    context['tyre_form'] = tyre_form
+    return render(request, "catalogue/tyre-categories.html", context)
 
 
 def shock_shop(request):
     return render(request, "davytyres/shock-shop.html")
+
 
 def auth_view(request):
     username = request.POST.get('username')
