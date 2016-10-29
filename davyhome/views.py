@@ -105,6 +105,7 @@ def auth_view(request):
 def inactive(request):
     return render(request, 'registration/inactive.html')
 
+
 def register(request, redirect=None):
     context = {}
     user_form = RegistrationForm(request.POST or None)

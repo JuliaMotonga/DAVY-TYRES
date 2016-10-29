@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load booking_extras %}
 
 {% block content %}
 
@@ -6,7 +7,7 @@
     {% for booking in bookings %}
         <div class="row" style="margin-left:40px;">
             <div class="col-xs-12 customer_bookings" >
-            <p>Status: {{ booking.status }}<p>
+            <p>Status: {{ booking.status|status_format }}<p>
             <p>Date/Time: <div class = "date">{{ booking.booking_time }}</div></p>
             <p>Service:<div id ="service_name">{{ booking }}</div></p>
             <p>Service Employee: {{ booking.service_employee.username }}<p>

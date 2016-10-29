@@ -113,7 +113,7 @@ class Booking(models.Model):
     service_employee = models.ForeignKey(BaseUser, related_name='employee')
     booking_day = models.DateField(null=True)
     booking_time = models.CharField(null=True, max_length=100)
-    status = models.CharField(choices=BOOKING_STATUS, default=BOOKING_STATUS[0], max_length=100)
+    status = models.CharField(choices=BOOKING_STATUS, default=BOOKING_STATUS[0][0], max_length=100)
     additional_information = models.TextField(max_length=256, null=True)
     registration_number = models.CharField(max_length=100, null=True)
 

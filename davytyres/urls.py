@@ -42,7 +42,7 @@ authentication = [
     url(r'^logindenied/$', views.logindenied),
     url(r'^authview/$', views.auth_view),
     url(r'^loggedin/$', views.loggedin),
-    url(r'^login/$', auth_views.login),
+    url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', views.logout_view),
     url(r'^register/$', basic_views.register),
     url(r'^register/(?P<redirect>\w+)?/?$', basic_views.register),
