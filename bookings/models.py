@@ -105,6 +105,9 @@ class Booking(models.Model):
         ('CN', 'Canceled'),
     )
 
+    class meta:
+        unique_together = ('booking_day', 'booking_time')
+
     customer = models.ForeignKey(BaseUser, related_name='customer')
     service = models.ForeignKey(Service)
     service_employee = models.ForeignKey(BaseUser, related_name='employee')

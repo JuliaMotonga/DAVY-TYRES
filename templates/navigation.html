@@ -1,54 +1,58 @@
-{%load staticfiles%}
-<div class ="brand-box">
+{% load staticfiles %}
+<div class="brand-box">
     <div class="row">
-    <div class="brandback hidden-xs hidden-sm hidden-md"><img src="{%static 'images/DavyTyresHeader/header-02.png'%}"></div>
-        <div class="logoShock hidden-xs hidden-sm hidden-md col-lg-1"><img src="{%static 'images/DavyTyresHeader/Shock_logo-04.png'%}" width="140%"></div>
-        <div class="logo col-xs-6 col-sm-4 col-md-5" ><img src="{%static 'images/DavyTyresHeader/Tyre_logo-03.png'%}" style="margin-top:20px; margin-right:85px; "></div>
-    <div class="headerAddress col-xs-6 col-sm-8 col-md-6" style="margin-top:5px;"><b>
-        131 Central Park Drive
-        <br>Cnr Winstone Place, Henderson,0610
-        <br><a href="tel:+64-9-836-6943"><i class="fa fa-phone-square" aria-hidden="true"></i>Phone
-        09-836-69435</a>
-       <br> <a href="tel:+021-9-836-6943"><i class="fa fa-phone-square" aria-hidden="true"></i>After Hours
-        09-836-69435</a></b>
-</div>
-</div>
+        <div class="brandback hidden-xs hidden-sm hidden-md"><img
+                src="{% static 'images/DavyTyresHeader/header-02.png' %}"></div>
+        <div class="logoShock hidden-xs hidden-sm hidden-md col-lg-1"><img
+                src="{% static 'images/DavyTyresHeader/Shock_logo-04.png' %}" width="140%"></div>
+        <div class="logo col-xs-6 col-sm-4 col-md-5"><img src="{% static 'images/DavyTyresHeader/Tyre_logo-03.png' %}"
+                                                          style="margin-top:20px; margin-right:85px; "></div>
+        <div class="headerAddress col-xs-6 col-sm-8 col-md-6" style="margin-top:5px;"><b>
+            131 Central Park Drive
+            <br>Cnr Winstone Place, Henderson,0610
+            <br><a href="tel:+64-9-836-6943"><i class="fa fa-phone-square" aria-hidden="true"></i>Phone
+            09-836-69435</a>
+            <br> <a href="tel:+021-9-836-6943"><i class="fa fa-phone-square" aria-hidden="true"></i>After Hours
+            09-836-69435</a></b>
+        </div>
+    </div>
 </div>
 
 
 <ul class="topnav" id="myTopnav">
     <li class="col-md-offset-1"><a href="/">HOME</a></li>
     {% if user.is_authenticated %}
-          <li> <a href="/services/bookings/" class="menuLog">
-            {{ request.user.first_name }}
+        <li><a href="/services/bookings/" class="menuLog">
+            {{ request.user.first_name.upper }}
         </a><a href="/logout/">LOGOUT</a>
-          {% else %}
-      <li> <a href="/login/">LOGIN</a></li>
-    {% endif %}</li>
-      <li><a href="/services/detail/">BOOKING</a></li>
-      <li><a href="/catalogue/">TYRES</a></li>
-      <li><a href="/services/">SERVICES</a></li>
-      <li><a href="/davytyres/deals/">SALES</a></li>
-      <li><a href="http://www.advantagetyres.co.nz/home">ADVANTAGE TYRES</a></li>
-      <li><a href="/davytyres/shock-shop/">SHOCK SHOP</a></li>
-      <li><a href="/davytyres/about-us/">ABOUT US</a></li>
-      <li><a href="/davytyres/contact-us/">CONTACT US</a></li>
-      <li class="icon">
+            {% else %}
+        <li><a href="/login/">LOGIN</a></li>
+    {% endif %}
+    </li>
+    <li><a href="/services/detail/">BOOKING</a></li>
+    <li><a href="/catalogue/">TYRES</a></li>
+    <li><a href="/services/">SERVICES</a></li>
+    <li><a href="/davytyres/deals/">SALES</a></li>
+    <li><a href="http://www.advantagetyres.co.nz/home">ADVANTAGE TYRES</a></li>
+    <li><a href="/davytyres/shock-shop/">SHOCK SHOP</a></li>
+    <li><a href="/davytyres/about-us/">ABOUT US</a></li>
+    <li><a href="/davytyres/contact-us/">CONTACT US</a></li>
+    <li class="icon">
         <a href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars" aria-hidden="true"></i>
-    </a>
-      </li>
+        </a>
+    </li>
 </ul>
 
 
 <script>
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
     }
-}
 </script>
 
 
