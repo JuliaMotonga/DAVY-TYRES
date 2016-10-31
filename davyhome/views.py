@@ -84,9 +84,23 @@ def tyre_categories(request):
     return render(request, "catalogue/tyre-categories.html", context)
 
 
+def alloy_wheels(request):
+    return render(request, "davytyres/alloy-wheels.html")
+
+def fleet_service(request):
+    return render(request, "davytyres/fleet-service.html")
+
+def heavy_machinery(request):
+    return render(request, "davytyres/heavy-machinery.html")
+
+def nitro_fill(request):
+    return render(request, "davytyres/nitro-fill.html")
+
+def wheel_alignment(request):
+    return render(request, "davytyres/wheel-alignment.html")
+
 def shock_shop(request):
     return render(request, "davytyres/shock-shop.html")
-
 
 def auth_view(request):
     username = request.POST.get('username')

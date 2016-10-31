@@ -28,9 +28,14 @@ urlpatterns = [
     url(r'about-us', views.about_us),
     url(r'contact-us', views.contact_us),
     url(r'deals', views.deals),
-    url(r'shock-shop', views.shock_shop)
-
+    url(r'shock-shop', views.shock_shop),
+    url(r'alloy-wheels', views.alloy_wheels),
+    url(r'fleet-service', views.fleet_service),
+    url(r'heavy-machinery', views.heavy_machinery),
+    url(r'nitro-fill', views.nitro_fill),
+    url(r'wheel-alignment', views.wheel_alignment)
 ]
+
 
 catalogue = [
     url(r'^catalogue/$', views.catalogue),
