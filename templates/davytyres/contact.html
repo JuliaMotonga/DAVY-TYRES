@@ -2,43 +2,62 @@
 {%load staticfiles%}
 {% block content %}
     {% if not submitted %}
-<div class="container-fluid" style="padding-bottom:40px;">
-    <div class="row">
 <h3 class =""style="text-align:left;">
 Contact us</h3><hr>
-<div class="tyre-calculator col-md-4">
+<div class="container-fluid" style="padding-bottom:40px;  background: #f0f0ff;">
+    <div class="row">
+  <div class="col-md-12" style="margin-top:20px; color:black;">
+      <h3 class ="">We are located at </h3>
+      <div class=" col-md-3" style="font-size:18px; font-color:black; text-align:left;">
+        131 Central Park Drive
+        <br>Cnr Winstone Place,
+          <br>Henderson,0610
+        <br><a href="tel:+64-9-836-6943"><i class="fa fa-phone-square" aria-hidden="true"></i>Phone
+        09-836-69435</a>
+       <br> <a href="tel:+021-9-836-6943" style=""><i class="fa fa-phone-square" aria-hidden="true"></i>After Hours
+        09-836-69435</a>
+          </div>
+      <div class="col-md-9">
+     <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA52dr4NTWBp6Sy4EzMwdz18nneKavY9NA'></script><div style='overflow:hidden;height:400px;width:auto;'><div id='gmap_canvas' style='height:500px;width:100%;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div> <a href='https://embedmaps.org/'>embed google maps directions</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=80d5deb82cf6a1863925d8bb20ceb740869eed32'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:17,center:new google.maps.LatLng(-36.8543756,174.6375402),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(-36.8543756,174.6375402)});infowindow = new google.maps.InfoWindow({content:'<strong>Davy Tyres</strong><br>131 Central Park Drive <br>0610 Auckland<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+</div>
+  </div>
+        </div>
+    </div>
+<hr>
+<div class="container-fluid" style="padding-bottom:40px;">
+    <div class="row">
+<div class="tyre-calculator col-md-10 col-md-offset-1">
     <h3>Make an enquiry now</h3>
-    <div class="calculator"><img src="{% static 'images/tyres/u138.jpg' %}"></div>
     <form action="/contact-us" method="post" id="enquiry">
+        <div class="col-md-6">
+            <h4>Personal Details</h4>
         <label for="first_name">First Name: </label><input name="first_name" id="first_name" type="text" placeholder="First name"/><br>
         <label for="last_name">Last Name: </label><input name="last_name" id="last_name" type="text" placeholder="Last name"/><br>
         <label for="phone">Phone: </label><input name="phone" id="phone" type="text" placeholder="Phone number"/><br>
         <label for="email">Email: </label><input name="email" id="email" type="text" placeholder="Email Address"/><br>
+            </div>
+         <div class="col-md-6">
+              <h4>Vehicle Details</h4>
         <label for="make">Vehicle make:</label><input name="make" id="make" type="text" placeholder="Vehicle make"/><br>
         <label for="model">Vehicle model:</label><input name="model" id="model" type="text"placeholder="Vehicle model" /><br>
         <label for="size">Current tyre size: </label><input name="size" id="size" type="text" placeholder="Current tyre size"/><br>
         <label for="brand">Current tyre brand:</label><input name="brand" id="brand" type="text" placeholder="Current tyre brand"/><br>
         <label for="quantity">No. of tyres required:</label><input name="quantity" id="quantity" type="text" placeholder="No. of tyres req."/><br>
-        <label for="comments">Comments: </label><textarea name="comments" id="comments" type="textarea" placeholder="Comments"></textarea><br>
+                   </div>
+        <div class="col-md-12">
+        <label for="comments">Comments: </label><textarea name="comments" id="comments" type="textarea" placeholder="Comments"></textarea><br></div>
     </form>
-    <button type="submit" form="enquiry" value="Submit">Send email</button>
+       <div class="col-md-12">
+    <button type="submit" form="enquiry" value="Submit">Send email</button></div>
     {% else %}
      <div class="davymessage">
-        <p> thank {{ name }}. We will come back to you as ap </p>
+        <p> thanks, {{ name }}. We will come back to you as ap </p>
          </div>
     <a href="/login" class="btn" style="float:left;"> <i class="fa fa-backward fa-3x"  aria-hidden="true"></i> Back</a>
 
     <a href="/"  class="btn" style="float:right;"> <i class="fa fa-home fa-3x" aria-hidden="true"></i> home</a>
     {% endif %}
     </div>
-        <div class="headerAddress col-xs-6" style="margin-top:5px; color:black;">
-        131 Central Park Drive
-        <br>Cnr Winstone Place, Henderson,0610
-        <br><a href="tel:+64-9-836-6943"><i class="fa fa-phone-square" aria-hidden="true"></i>Phone
-        09-836-69435</a>
-       <br> <a href="tel:+021-9-836-6943"><i class="fa fa-phone-square" aria-hidden="true"></i>After Hours
-        09-836-69435</a>
-</div>
-            </div>
-        </div>
+    </div>
+    </div>
 {% endblock %}
